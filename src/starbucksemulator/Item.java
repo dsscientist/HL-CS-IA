@@ -4,6 +4,7 @@ package starbucksemulator;
 public abstract class Item {
     private String name;
     private double price;
+    private String askMe;
     
     public Item(String s, double d) {
         setName(s);
