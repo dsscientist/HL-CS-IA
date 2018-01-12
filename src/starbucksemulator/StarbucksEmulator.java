@@ -13,6 +13,7 @@ public class StarbucksEmulator {
         // TODO code application logic here
     }
     
+    
     public static boolean authenticate(String username, int pin) {
         
     }
