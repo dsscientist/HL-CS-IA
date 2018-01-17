@@ -1,10 +1,13 @@
 package starbucksemulator;
 
+import static starbucksemulator.Roast.*;
+
 public class Espresso {
     private int shotNum;
     private boolean isDecaf = false;
-    private Roast roast;
+    private Roast roast = SIGNATURE;
     private boolean isRistretto = false;
+    private static String[] shotName = {"Single", "Double", "Triple", "Quad"};
     
     public void setShots(int i) {
         shotNum = i;
@@ -24,7 +27,14 @@ public class Espresso {
     
     public String toString() {
         String s = "";
-        if () {
+        if (roast == BLONDE) {
+            s += "Blonde";
+        }
+        if (isDecaf) {
+            s += "Decaf";
+        }
+        if (shotNum < )
+        if (isRistretto) {
             
         }
     }
