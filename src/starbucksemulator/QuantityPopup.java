@@ -16,6 +16,8 @@ public class QuantityPopup extends javax.swing.JFrame {
      */
     public QuantityPopup() {
         initComponents();
+        QuantityScreen qs = new QuantityScreen();
+        
     }
 
     /**

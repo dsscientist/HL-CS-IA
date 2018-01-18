@@ -17,6 +17,8 @@ public class MainInterface extends javax.swing.JFrame {
         labelTabs.setTabPlacement(JTabbedPane.RIGHT);
         MainScreen ms = new MainScreen();
         labelTabs.addTab("Whoo-hoo!", null, ms, "Hi");
+        labelTabs.setVisible(true);
+        ms.setVisible(true);
     }
 
     /**
