@@ -1,0 +1,31 @@
+Wed Jan 17 16:25:00 PST 2018 : Apache Derby Network Server - 10.8.3.0 - (1405108) started and ready to accept connections on port 1527
+----------------------------------------------------------------
+Wed Jan 17 16:25:01 PST 2018:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.8.3.0 - (1405108): instance a816c00e-0161-06a7-916f-ffff9d4aa184 
+on database directory C:\Users\David\Documents\NetBeansProjects\StarbucksEmulator\StarbucksData  with class loader sun.misc.Launcher$AppClassLoader@57bd06bf 
+Loaded from file:/C:/Program%20Files/Java/jdk1.7.0_45/db/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.7.0_45-b18
+user.dir=C:\Program Files\Java\jdk1.7.0_45\db
+os.name=Windows 7
+os.arch=amd64
+os.version=6.1
+derby.system.home=C:\Users\David\Documents\NetBeansProjects\StarbucksEmulator
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Wed Jan 17 16:25:19 PST 2018:
+Shutting down instance a816c00e-0161-06a7-916f-ffff9d4aa184 on database directory C:\Users\David\Documents\NetBeansProjects\StarbucksEmulator\StarbucksData with class loader sun.misc.Launcher$AppClassLoader@57bd06bf 
+Wed Jan 17 16:25:19 PST 2018 Thread[DRDAConnThread_3,5,main] (DATABASE = StarbucksData), (DRDAID = {2}), Database 'StarbucksData' shutdown.
+----------------------------------------------------------------
+Wed Jan 17 16:25:31 PST 2018:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.8.3.0 - (1405108): instance 6c44409f-0161-06a7-916f-ffff9d4aa184 
+on database directory C:\Users\David\Documents\NetBeansProjects\StarbucksEmulator\StarbucksData  with class loader sun.misc.Launcher$AppClassLoader@57bd06bf 
+Loaded from file:/C:/Program%20Files/Java/jdk1.7.0_45/db/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.7.0_45-b18
+user.dir=C:\Program Files\Java\jdk1.7.0_45\db
+os.name=Windows 7
+os.arch=amd64
+os.version=6.1
+derby.system.home=C:\Users\David\Documents\NetBeansProjects\StarbucksEmulator
+Database Class Loader started - derby.database.classpath=''

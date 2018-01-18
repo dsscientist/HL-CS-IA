@@ -7,7 +7,7 @@ public class Espresso {
     private boolean isDecaf = false;
     private Roast roast = SIGNATURE;
     private boolean isRistretto = false;
-    private static String[] shotName = {"Single", "Double", "Triple", "Quad"};
+    private static final String[] SHOT_NAME = {"Single", "Double", "Triple", "Quad"};
     
     public void setShots(int i) {
         shotNum = i;
@@ -28,14 +28,17 @@ public class Espresso {
     public String toString() {
         String s = "";
         if (roast == BLONDE) {
-            s += "Blonde";
+            s += "  Blonde";
         }
         if (isDecaf) {
-            s += "Decaf";
+            s += "  Decaf";
         }
-        if (shotNum < )
+        if (shotNum < SHOT_NAME.length) {
+            s += String.format("  %s\n", SHOT_NAME[shotNum - 1]);
+        }
         if (isRistretto) {
-            
+            s += "  Ristretto";
         }
+        return s;
     }
 }

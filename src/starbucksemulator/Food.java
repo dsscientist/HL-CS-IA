@@ -14,6 +14,7 @@ public class Food extends Item {
     
     @Override
     public String toString() {
-        
+        String s = "";
+        return s;
     }
 }

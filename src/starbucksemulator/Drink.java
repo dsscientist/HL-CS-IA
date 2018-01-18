@@ -16,6 +16,18 @@ public class Drink extends Item {
     
     @Override
     public String toString() {
-        
+        String s = "";
+        //print drink name
+        s += espresso;
+        s += makeString(custom);
+        return s;
+    }
+    
+    private String makeString(Set<String> custom) {
+        String s = "";
+        for (String i : custom) {
+            s += String.format("  %s\n", i);
+        }
+        return s;
     }
 }
