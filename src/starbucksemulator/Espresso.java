@@ -34,7 +34,11 @@ public class Espresso {
             s += "  Decaf";
         }
         if (shotNum < SHOT_NAME.length) {
-            s += String.format("  %s\n", SHOT_NAME[shotNum - 1]);
+            if (shotNum != 0) {
+                s += String.format("  %s\n", SHOT_NAME[shotNum - 1]);
+            }
+        } else {
+            s += String.format("  %d Shots", shotNum);
         }
         if (isRistretto) {
             s += "  Ristretto";

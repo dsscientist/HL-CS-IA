@@ -14,10 +14,24 @@ public class MainInterface extends javax.swing.JFrame {
      */
     public MainInterface() {
         initComponents();
+        labelTabs.setUI(new BasicTabbedPaneUI() {
+            @Override
+            protected int 
+        });
         labelTabs.setTabPlacement(JTabbedPane.RIGHT);
         MainScreen ms = new MainScreen();
-        labelTabs.addTab("Whoo-hoo!", null, ms, "Hi");
+        labelTabs.addTab("MAIN", null, ms, "Hi");
+        SyrupScreen ss = new SyrupScreen();
+        labelTabs.addTab("SYRUP", null, ss, "Hi");
+        MilkScreen m2s = new MilkScreen();
+        labelTabs.addTab("MILK", null, m2s, "Hi");
+        CustomScreen cs = new CustomScreen();
+        labelTabs.addTab("CUSTOM", null, cs, "Hi");
         labelTabs.setVisible(true);
+        labelTabs.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
+        ms.setVisible(true);
+        ms.setVisible(true);
+        ms.setVisible(true);
         ms.setVisible(true);
     }
 
