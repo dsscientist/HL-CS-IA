@@ -3,22 +3,40 @@ package starbucksemulator;
 
 //find out Cole's screen resolution (so application can fit screen)
 
+import java.awt.FontMetrics;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import javax.swing.JTabbedPane;
 import javax.swing.SwingConstants;
+import javax.swing.plaf.basic.BasicTabbedPaneUI;
 
 
 public class MainInterface extends javax.swing.JFrame {
 
-    /**
-     * Creates new form MainInterface
-     */
+    public static javax.swing.JPanel[] panels = new javax.swing.JPanel[9];
+    /*
+    
+    */
+    
     public MainInterface() {
         initComponents();
+        JTabbedPane labelTabs = new JTabbedPane(JTabbedPane.RIGHT);
+        labelTabs.setSize(1024, 600);
+        labelTabs.setLocation(342, 70);
+        this.add(labelTabs);
         labelTabs.setUI(new BasicTabbedPaneUI() {
             @Override
-            protected int 
+            protected int calculateTabWidth(
+                    int tabPlacement, int tabIndex, FontMetrics metrics) {
+                return 100;
+            }
+            
+            @Override
+            protected int calculateTabHeight(
+                    int tabPlacement, int tabIndex, int fontHeight) {
+                return 149;
+            }
         });
-        labelTabs.setTabPlacement(JTabbedPane.RIGHT);
         MainScreen ms = new MainScreen();
         labelTabs.addTab("MAIN", null, ms, "Hi");
         SyrupScreen ss = new SyrupScreen();
@@ -27,12 +45,48 @@ public class MainInterface extends javax.swing.JFrame {
         labelTabs.addTab("MILK", null, m2s, "Hi");
         CustomScreen cs = new CustomScreen();
         labelTabs.addTab("CUSTOM", null, cs, "Hi");
+        labelTabs.addMouseListener(new MouseAdapter() {
+            public void MouseClicked(MouseEvent e) {
+                labelTabs.setVisible(true);
+            }
+        });
         labelTabs.setVisible(true);
         labelTabs.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
-        ms.setVisible(true);
-        ms.setVisible(true);
-        ms.setVisible(true);
-        ms.setVisible(true);
+        JTabbedPane drinkTabs = new JTabbedPane(JTabbedPane.BOTTOM);
+        drinkTabs.setSize(924, 630);
+        drinkTabs.setLocation(342, 70);
+        this.add(drinkTabs);
+        drinkTabs.setUI(new BasicTabbedPaneUI() {
+            @Override
+            protected int calculateTabWidth(
+                    int tabPlacement, int tabIndex, FontMetrics metrics) {
+                return 230;
+            }
+            @Override
+            protected int calculateTabHeight(
+                    int tabPlacement, int tabIndex, int fontHeight) {
+                return 30;
+            }
+        });
+        ms = new MainScreen();
+        drinkTabs.addTab("MAIN", null, ms, "Hi");
+        ss = new SyrupScreen();
+        drinkTabs.addTab("SYRUP", null, ss, "Hi");
+        m2s = new MilkScreen();
+        drinkTabs.addTab("MILK", null, m2s, "Hi");
+        cs = new CustomScreen();
+        drinkTabs.addTab("CUSTOM", null, cs, "Hi");
+        drinkTabs.addMouseListener(new MouseAdapter() {
+            public void MouseClicked(MouseEvent e) {
+                drinkTabs.setVisible(true);
+            }
+        });
+        drinkTabs.setVisible(true);
+        drinkTabs.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
+    }
+    
+    public void bringToFront(JTabbedPane jtp) {
+        
     }
 
     /**
@@ -44,24 +98,17 @@ public class MainInterface extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        labelTabs = new javax.swing.JTabbedPane();
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 342, Short.MAX_VALUE)
-                .addComponent(labelTabs, javax.swing.GroupLayout.PREFERRED_SIZE, 1024, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(0, 1366, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(70, Short.MAX_VALUE)
-                .addComponent(labelTabs, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(98, 98, 98))
+            .addGap(0, 768, Short.MAX_VALUE)
         );
 
         pack();
@@ -103,6 +150,5 @@ public class MainInterface extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTabbedPane labelTabs;
     // End of variables declaration//GEN-END:variables
 }

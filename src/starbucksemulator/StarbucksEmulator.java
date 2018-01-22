@@ -17,5 +17,6 @@ public class StarbucksEmulator {
     
     public static boolean authenticate(String username, int pin) {
         return true;
+        
     }
 }
