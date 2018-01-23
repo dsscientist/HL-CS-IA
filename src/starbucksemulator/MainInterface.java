@@ -20,73 +20,13 @@ public class MainInterface extends javax.swing.JFrame {
     
     public MainInterface() {
         initComponents();
-        JTabbedPane labelTabs = new JTabbedPane(JTabbedPane.RIGHT);
-        labelTabs.setSize(1024, 600);
-        labelTabs.setLocation(342, 70);
-        this.add(labelTabs);
-        labelTabs.setUI(new BasicTabbedPaneUI() {
-            @Override
-            protected int calculateTabWidth(
-                    int tabPlacement, int tabIndex, FontMetrics metrics) {
-                return 100;
-            }
-            
-            @Override
-            protected int calculateTabHeight(
-                    int tabPlacement, int tabIndex, int fontHeight) {
-                return 149;
-            }
-        });
-        MainScreen ms = new MainScreen();
-        labelTabs.addTab("MAIN", null, ms, "Hi");
-        SyrupScreen ss = new SyrupScreen();
-        labelTabs.addTab("SYRUP", null, ss, "Hi");
-        MilkScreen m2s = new MilkScreen();
-        labelTabs.addTab("MILK", null, m2s, "Hi");
-        CustomScreen cs = new CustomScreen();
-        labelTabs.addTab("CUSTOM", null, cs, "Hi");
-        labelTabs.addMouseListener(new MouseAdapter() {
-            public void MouseClicked(MouseEvent e) {
-                labelTabs.setVisible(true);
-            }
-        });
-        labelTabs.setVisible(true);
-        labelTabs.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
-        JTabbedPane drinkTabs = new JTabbedPane(JTabbedPane.BOTTOM);
-        drinkTabs.setSize(924, 630);
-        drinkTabs.setLocation(342, 70);
-        this.add(drinkTabs);
-        drinkTabs.setUI(new BasicTabbedPaneUI() {
-            @Override
-            protected int calculateTabWidth(
-                    int tabPlacement, int tabIndex, FontMetrics metrics) {
-                return 230;
-            }
-            @Override
-            protected int calculateTabHeight(
-                    int tabPlacement, int tabIndex, int fontHeight) {
-                return 30;
-            }
-        });
-        ms = new MainScreen();
-        drinkTabs.addTab("MAIN", null, ms, "Hi");
-        ss = new SyrupScreen();
-        drinkTabs.addTab("SYRUP", null, ss, "Hi");
-        m2s = new MilkScreen();
-        drinkTabs.addTab("MILK", null, m2s, "Hi");
-        cs = new CustomScreen();
-        drinkTabs.addTab("CUSTOM", null, cs, "Hi");
-        drinkTabs.addMouseListener(new MouseAdapter() {
-            public void MouseClicked(MouseEvent e) {
-                drinkTabs.setVisible(true);
-            }
-        });
-        drinkTabs.setVisible(true);
-        drinkTabs.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
-    }
-    
-    public void bringToFront(JTabbedPane jtp) {
-        
+        this.setTitle("Starbucks Emulator");
+        this.setResizable(false);
+        EmulatorPanel ep = new EmulatorPanel();
+        this.add(ep);
+        ep.setLocation(125, 50);
+        ep.setSize(1366, 768);
+        ep.setVisible(true);
     }
 
     /**

@@ -5,18 +5,16 @@
  */
 package starbucksemulator;
 
-import java.awt.Color;
-
 /**
  *
  * @author shirdav18
  */
-public class SyrupScreen extends javax.swing.JPanel {
+public class LockScreen extends javax.swing.JPanel {
 
     /**
-     * Creates new form SyrupScreen
+     * Creates new form LockScreen
      */
-    public SyrupScreen() {
+    public LockScreen() {
         initComponents();
     }
 
@@ -29,32 +27,19 @@ public class SyrupScreen extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-
-        setPreferredSize(new java.awt.Dimension(1024, 600));
-
-        jLabel1.setText("Smile!");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(491, 491, 491)
-                .addComponent(jLabel1)
-                .addContainerGap(505, Short.MAX_VALUE))
+            .addGap(0, 1336, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(575, Short.MAX_VALUE))
+            .addGap(0, 768, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
