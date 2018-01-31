@@ -13,7 +13,8 @@ public class StarbucksEmulator {
      */
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
         Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
-        Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/starbuckdDB;create=true","dsscientist","ilovemom100%");
+        Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/starbucksDB;create=true"
+                ,"dsscientist","ilovemom100%"); //don't worry, fake useless passsword
         Statement stmt = con.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT * FROM PartnerInfo");
         while (rs.next()) {

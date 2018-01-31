@@ -36,55 +36,21 @@ public class EmulatorPanel extends javax.swing.JPanel {
             @Override
             protected int calculateTabHeight(
                     int tabPlacement, int tabIndex, int fontHeight) {
-                return 149;
+                return 121;
             }
         });
         MainScreen ms = new MainScreen();
-        labelTabs.addTab("MAIN", null, ms, "Hi");
+        labelTabs.addTab("MAIN", null, ms, null);
         SyrupScreen ss = new SyrupScreen();
-        labelTabs.addTab("SYRUP", null, ss, "Hi");
+        labelTabs.addTab("SYRUP", null, ss, null);
         MilkScreen m2s = new MilkScreen();
-        labelTabs.addTab("MILK", null, m2s, "Hi");
+        labelTabs.addTab("MILK", null, m2s, null);
         CustomScreen cs = new CustomScreen();
-        labelTabs.addTab("CUSTOM", null, cs, "Hi");
-        labelTabs.addMouseListener(new MouseAdapter() {
-            public void MouseClicked(MouseEvent e) {
-                labelTabs.setVisible(true);
-            }
-        });
+        labelTabs.addTab("CUSTOM", null, cs, null);
+        EspressoDrinkScreen eds = new EspressoDrinkScreen();
+        labelTabs.addTab("ESPRESSO", null, eds, null);
         labelTabs.setVisible(true);
         labelTabs.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
-        JTabbedPane drinkTabs = new JTabbedPane(JTabbedPane.TOP);
-        this.add(drinkTabs);
-        drinkTabs.setSize(924, 630);
-        drinkTabs.setLocation(0, 70);
-        drinkTabs.setUI(new BasicTabbedPaneUI() {
-            @Override
-            protected int calculateTabWidth(
-                    int tabPlacement, int tabIndex, FontMetrics metrics) {
-                return 230;
-            }
-            @Override
-            protected int calculateTabHeight(
-                    int tabPlacement, int tabIndex, int fontHeight) {
-                return 30;
-            }
-        });
-        ms = new MainScreen();
-        drinkTabs.addTab("MAIN", null, ms, "Hi");
-        ss = new SyrupScreen();
-        drinkTabs.addTab("SYRUP", null, ss, "Hi");
-        m2s = new MilkScreen();
-        drinkTabs.addTab("MILK", null, m2s, "Hi");
-        cs = new CustomScreen();
-        drinkTabs.addTab("CUSTOM", null, cs, "Hi");
-        drinkTabs.addMouseListener(new MouseAdapter() {
-            public void MouseClicked(MouseEvent e) {
-                drinkTabs.setVisible(true);
-            }
-        });
-        drinkTabs.setVisible(true);
-        drinkTabs.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
     }
     
     public void bringToFront(JTabbedPane jtp) {
