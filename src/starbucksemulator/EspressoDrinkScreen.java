@@ -13,8 +13,12 @@ public class EspressoDrinkScreen extends javax.swing.JPanel {
     
     public EspressoDrinkScreen() {
         initComponents();
+        roundButtons();
     }
     
+    private void roundButtons() {
+        
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -26,101 +30,132 @@ public class EspressoDrinkScreen extends javax.swing.JPanel {
     private void initComponents() {
 
         nonfatMilkBtn = new javax.swing.JButton();
-        onePBtn = new javax.swing.JButton();
-        twoPBtn = new javax.swing.JButton();
+        onePMilkBtn = new javax.swing.JButton();
+        twoPMilkBtn = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        soyBtn = new javax.swing.JButton();
-        lactaidBtn = new javax.swing.JButton();
-        coconutBtn = new javax.swing.JButton();
-        almondBtn = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
-        jButton17 = new javax.swing.JButton();
-        jButton18 = new javax.swing.JButton();
-        jButton19 = new javax.swing.JButton();
-        jButton20 = new javax.swing.JButton();
-        jButton21 = new javax.swing.JButton();
-        jButton22 = new javax.swing.JButton();
-        jButton23 = new javax.swing.JButton();
-        jButton24 = new javax.swing.JButton();
+        soyMilkBtn = new javax.swing.JButton();
+        lactaidMilkBtn = new javax.swing.JButton();
+        coconutMilkBtn = new javax.swing.JButton();
+        almondMilkBtn = new javax.swing.JButton();
+        halfNHalfBtn = new javax.swing.JButton();
+        heavyCreamBtn = new javax.swing.JButton();
+        eggnogBtn = new javax.swing.JButton();
+        dairyButton = new javax.swing.JButton();
+        withAlmondBtn = new javax.swing.JButton();
+        withHalfNHalfBtn = new javax.swing.JButton();
+        withHeavyCreamBtn = new javax.swing.JButton();
+        extraBtn = new javax.swing.JButton();
+        lightBtn = new javax.swing.JButton();
+        with2PBtn = new javax.swing.JButton();
+        withWholeBtn = new javax.swing.JButton();
+        withSoyBtn = new javax.swing.JButton();
+        withLactaidBtn = new javax.swing.JButton();
+        withCoconutBtn = new javax.swing.JButton();
+        withNonfatBtn = new javax.swing.JButton();
+        with1PBtn = new javax.swing.JButton();
 
+        nonfatMilkBtn.setBackground(new java.awt.Color(204, 255, 255));
         nonfatMilkBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
         nonfatMilkBtn.setText("Nonfat Milk");
 
-        onePBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
-        onePBtn.setText("1% Milk");
+        onePMilkBtn.setBackground(new java.awt.Color(204, 255, 255));
+        onePMilkBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        onePMilkBtn.setText("1% Milk");
 
-        twoPBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
-        twoPBtn.setText("2% Milk");
+        twoPMilkBtn.setBackground(new java.awt.Color(204, 255, 255));
+        twoPMilkBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        twoPMilkBtn.setText("2% Milk");
 
+        jButton4.setBackground(new java.awt.Color(204, 255, 255));
         jButton4.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
         jButton4.setText("Whole Milk");
 
-        soyBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
-        soyBtn.setText("Soy Milk");
+        soyMilkBtn.setBackground(new java.awt.Color(255, 255, 204));
+        soyMilkBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        soyMilkBtn.setText("Soy Milk");
 
-        lactaidBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
-        lactaidBtn.setText("Lactaid Milk");
+        lactaidMilkBtn.setBackground(new java.awt.Color(255, 255, 204));
+        lactaidMilkBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        lactaidMilkBtn.setText("Lactaid Milk");
 
-        coconutBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
-        coconutBtn.setText("Coconut Milk");
+        coconutMilkBtn.setBackground(new java.awt.Color(255, 255, 204));
+        coconutMilkBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        coconutMilkBtn.setText("Coconut Milk");
 
-        almondBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
-        almondBtn.setText("Almond Milk");
+        almondMilkBtn.setBackground(new java.awt.Color(255, 255, 204));
+        almondMilkBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        almondMilkBtn.setText("Almond Milk");
 
-        jButton9.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
-        jButton9.setText("Half & Half (Breve)");
+        halfNHalfBtn.setBackground(new java.awt.Color(204, 204, 255));
+        halfNHalfBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        halfNHalfBtn.setText("Half & Half (Breve)");
 
-        jButton10.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
-        jButton10.setText("Heavy Cream");
+        heavyCreamBtn.setBackground(new java.awt.Color(204, 204, 255));
+        heavyCreamBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        heavyCreamBtn.setText("Heavy Cream");
 
-        jButton11.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
-        jButton11.setText("Eggnog");
+        eggnogBtn.setBackground(new java.awt.Color(204, 204, 255));
+        eggnogBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        eggnogBtn.setText("Eggnog");
 
-        jButton12.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
-        jButton12.setText("Add Dairy");
+        dairyButton.setBackground(new java.awt.Color(204, 204, 204));
+        dairyButton.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        dairyButton.setText("Add Dairy");
 
-        jButton13.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
-        jButton13.setText("Almond Milk");
+        withAlmondBtn.setBackground(new java.awt.Color(255, 255, 204));
+        withAlmondBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        withAlmondBtn.setText(" WithAlmond Milk");
 
-        jButton14.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
-        jButton14.setText("Half & Half (Breve)");
+        withHalfNHalfBtn.setBackground(new java.awt.Color(204, 204, 255));
+        withHalfNHalfBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        withHalfNHalfBtn.setText("With Half & Half (Breve)");
 
-        jButton15.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
-        jButton15.setText("Heavy Cream");
+        withHeavyCreamBtn.setBackground(new java.awt.Color(204, 204, 255));
+        withHeavyCreamBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        withHeavyCreamBtn.setText("With Heavy Cream");
+        withHeavyCreamBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                withHeavyCreamBtnActionPerformed(evt);
+            }
+        });
 
-        jButton16.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
-        jButton16.setText("Eggnog");
+        extraBtn.setBackground(new java.awt.Color(0, 0, 0));
+        extraBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        extraBtn.setForeground(new java.awt.Color(255, 255, 255));
+        extraBtn.setText("Extra");
 
-        jButton17.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
-        jButton17.setText("Nonfat Milk");
+        lightBtn.setBackground(new java.awt.Color(0, 0, 0));
+        lightBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        lightBtn.setForeground(new java.awt.Color(255, 255, 255));
+        lightBtn.setText("Light");
 
-        jButton18.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
-        jButton18.setText("Add Dairy");
+        with2PBtn.setBackground(new java.awt.Color(204, 255, 255));
+        with2PBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        with2PBtn.setText("With 2% Milk");
 
-        jButton19.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
-        jButton19.setText("1% Milk");
+        withWholeBtn.setBackground(new java.awt.Color(204, 255, 255));
+        withWholeBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        withWholeBtn.setText("With Whole Milk");
 
-        jButton20.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
-        jButton20.setText("2% Milk");
+        withSoyBtn.setBackground(new java.awt.Color(255, 255, 204));
+        withSoyBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        withSoyBtn.setText("With Soy Milk");
 
-        jButton21.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
-        jButton21.setText("Whole Milk");
+        withLactaidBtn.setBackground(new java.awt.Color(255, 255, 204));
+        withLactaidBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        withLactaidBtn.setText("With Lactaid Milk");
 
-        jButton22.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
-        jButton22.setText("Soy Milk");
+        withCoconutBtn.setBackground(new java.awt.Color(255, 255, 204));
+        withCoconutBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        withCoconutBtn.setText("With Coconut Milk");
 
-        jButton23.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
-        jButton23.setText("Lactaid Milk");
+        withNonfatBtn.setBackground(new java.awt.Color(204, 255, 255));
+        withNonfatBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        withNonfatBtn.setText("With Nonfat Milk");
 
-        jButton24.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
-        jButton24.setText("Coconut Milk");
+        with1PBtn.setBackground(new java.awt.Color(204, 255, 255));
+        with1PBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        with1PBtn.setText("With 1% Milk");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -130,145 +165,150 @@ public class EspressoDrinkScreen extends javax.swing.JPanel {
                 .addGap(79, 79, 79)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(eggnogBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(dairyButton, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(halfNHalfBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(heavyCreamBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(coconutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(coconutMilkBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(almondBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(almondMilkBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(soyBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(soyMilkBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(lactaidBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(lactaidMilkBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(twoPBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(twoPMilkBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(nonfatMilkBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(onePBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(onePMilkBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 206, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(withHalfNHalfBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(withHeavyCreamBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(withCoconutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(withAlmondBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(withSoyBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(withLactaidBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(with2PBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(withWholeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(extraBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(lightBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(withNonfatBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton24, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton22, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton23, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton21, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addComponent(with1PBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(83, 83, 83))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(32, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(nonfatMilkBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(onePBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(onePMilkBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(twoPBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(twoPMilkBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(soyBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lactaidBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(soyMilkBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lactaidMilkBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(coconutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(almondBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(coconutMilkBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(almondMilkBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(halfNHalfBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(heavyCreamBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(extraBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lightBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton21, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(withNonfatBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(with1PBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton22, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton23, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(with2PBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(withWholeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton24, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(withSoyBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(withLactaidBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(withCoconutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(withAlmondBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(withHalfNHalfBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(withHeavyCreamBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(eggnogBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dairyButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(40, 40, 40))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void withHeavyCreamBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_withHeavyCreamBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_withHeavyCreamBtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton almondBtn;
-    private javax.swing.JButton coconutBtn;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton19;
-    private javax.swing.JButton jButton20;
-    private javax.swing.JButton jButton21;
-    private javax.swing.JButton jButton22;
-    private javax.swing.JButton jButton23;
-    private javax.swing.JButton jButton24;
+    private javax.swing.JButton almondMilkBtn;
+    private javax.swing.JButton coconutMilkBtn;
+    private javax.swing.JButton dairyButton;
+    private javax.swing.JButton eggnogBtn;
+    private javax.swing.JButton extraBtn;
+    private javax.swing.JButton halfNHalfBtn;
+    private javax.swing.JButton heavyCreamBtn;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton9;
-    private javax.swing.JButton lactaidBtn;
+    private javax.swing.JButton lactaidMilkBtn;
+    private javax.swing.JButton lightBtn;
     private javax.swing.JButton nonfatMilkBtn;
-    private javax.swing.JButton onePBtn;
-    private javax.swing.JButton soyBtn;
-    private javax.swing.JButton twoPBtn;
+    private javax.swing.JButton onePMilkBtn;
+    private javax.swing.JButton soyMilkBtn;
+    private javax.swing.JButton twoPMilkBtn;
+    private javax.swing.JButton with1PBtn;
+    private javax.swing.JButton with2PBtn;
+    private javax.swing.JButton withAlmondBtn;
+    private javax.swing.JButton withCoconutBtn;
+    private javax.swing.JButton withHalfNHalfBtn;
+    private javax.swing.JButton withHeavyCreamBtn;
+    private javax.swing.JButton withLactaidBtn;
+    private javax.swing.JButton withNonfatBtn;
+    private javax.swing.JButton withSoyBtn;
+    private javax.swing.JButton withWholeBtn;
     // End of variables declaration//GEN-END:variables
 }
