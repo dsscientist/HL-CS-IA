@@ -22,7 +22,7 @@ public class StarbucksEmulator {
             int i = rs.getInt("Pin");
             System.out.println(s + " " + i);
         }
-        MainInterface mi = new MainInterface();
+        MainInterface mi = new MainInterface(con);
         mi.setVisible(true);
     }
     

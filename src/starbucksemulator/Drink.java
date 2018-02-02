@@ -6,6 +6,7 @@ import java.util.Set;
 
 public class Drink extends Item {
     private Size size;
+    private String milk;
     private Espresso espresso;
     private Set<String> custom = new HashSet<String>();
     
@@ -18,7 +19,8 @@ public class Drink extends Item {
     public String toString() {
         String s = "";
         //print drink name
-        s += espresso;
+        s += espresso + "\n";
+        s += milk + "\n";
         s += makeString(custom);
         return s;
     }

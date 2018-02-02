@@ -5,19 +5,63 @@
  */
 package starbucksemulator;
 
-/**
- *
- * @author shirdav18
- */
+import java.sql.Connection;
+
+
 public class EspressoDrinkScreen extends javax.swing.JPanel {
     
-    public EspressoDrinkScreen() {
+    private javax.swing.JButton[] buttons = new javax.swing.JButton[24];
+    private Connection con;
+    
+    public EspressoDrinkScreen(Connection c) {
         initComponents();
+        con = c;
+        addButtons();
+        addMouseListeners();
         roundButtons();
     }
     
+    private void addButtons() {
+        buttons[0] = almondMilkBtn;
+        buttons[1] = coconutMilkBtn;
+        buttons[2] = dairyButton;
+        buttons[3] = eggnogBtn;
+        buttons[4] = extraBtn;
+        buttons[5] = halfNHalfBtn;
+        buttons[6] = heavyCreamBtn;
+        buttons[7] = jButton4;
+        buttons[8] = lactaidMilkBtn;
+        buttons[9] = lightBtn;
+        buttons[10] = nonfatMilkBtn;
+        buttons[11] = onePMilkBtn;
+        buttons[12] = soyMilkBtn;
+        buttons[13] = twoPMilkBtn;
+        buttons[14] = with1PBtn;
+        buttons[15] = with2PBtn;
+        buttons[16] = withAlmondBtn;
+        buttons[17] = withCoconutBtn;
+        buttons[18] = withHalfNHalfBtn;
+        buttons[19] = withHeavyCreamBtn;
+        buttons[20] = withLactaidBtn;
+        buttons[21] = withNonfatBtn;
+        buttons[22] = withSoyBtn;
+        buttons[23] = withWholeBtn;
+    }
+    
+    public void addMouseListeners() {
+        for (javax.swing.JButton b : buttons) {
+            b.addMouseListener(new java.awt.event.MouseAdapter() {
+                public void mouseClicked(java.awt.event.MouseEvent evt) {
+                    System.out.println("hi");
+                }
+            });
+        }
+    }
+    
     private void roundButtons() {
-        
+        for (javax.swing.JButton b : buttons) {
+            b.setBorder(new RoundedBorder(10));
+        }
     }
 
     /**
@@ -57,6 +101,11 @@ public class EspressoDrinkScreen extends javax.swing.JPanel {
         nonfatMilkBtn.setBackground(new java.awt.Color(204, 255, 255));
         nonfatMilkBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
         nonfatMilkBtn.setText("Nonfat Milk");
+        nonfatMilkBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                nonfatMilkBtnMouseClicked(evt);
+            }
+        });
 
         onePMilkBtn.setBackground(new java.awt.Color(204, 255, 255));
         onePMilkBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
@@ -283,6 +332,10 @@ public class EspressoDrinkScreen extends javax.swing.JPanel {
     private void withHeavyCreamBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_withHeavyCreamBtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_withHeavyCreamBtnActionPerformed
+
+    private void nonfatMilkBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nonfatMilkBtnMouseClicked
+        
+    }//GEN-LAST:event_nonfatMilkBtnMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
