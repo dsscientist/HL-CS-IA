@@ -12,7 +12,9 @@ public class StarbucksEmulator {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
-        Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
+        NumberKeyPopup nkp = new NumberKeyPopup();
+        nkp.setVisible(true);
+        /*Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
         Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/starbucksDB;create=true"
                 ,"dsscientist","ilovemom100%"); //don't worry, fake useless passsword
         Statement stmt = con.createStatement();
@@ -23,7 +25,7 @@ public class StarbucksEmulator {
             System.out.println(s + " " + i);
         }
         MainInterface mi = new MainInterface(con);
-        mi.setVisible(true);
+        mi.setVisible(true);*/
     }
     
     

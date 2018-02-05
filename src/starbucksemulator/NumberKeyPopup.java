@@ -9,15 +9,20 @@ package starbucksemulator;
  *
  * @author shirdav18
  */
-public class QuantityPopup extends javax.swing.JFrame {
+public class NumberKeyPopup extends javax.swing.JFrame {
 
     /**
      * Creates new form QuantityPopup
      */
-    public QuantityPopup() {
+    public NumberKeyPopup() {
         initComponents();
-        QuantityScreen qs = new QuantityScreen();
-        
+        this.setTitle("k;dfjasdklf");
+        this.setResizable(false);
+        this.setLocation(400, 100);
+        NumberKeyScreen nks = new NumberKeyScreen();
+        this.add(nks);
+        nks.setLocation(0, 0);
+        nks.setVisible(true);
     }
 
     /**
@@ -62,20 +67,21 @@ public class QuantityPopup extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(QuantityPopup.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NumberKeyPopup.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(QuantityPopup.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NumberKeyPopup.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(QuantityPopup.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NumberKeyPopup.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(QuantityPopup.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NumberKeyPopup.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new QuantityPopup().setVisible(true);
+                new NumberKeyPopup().setVisible(true);
             }
         });
     }
