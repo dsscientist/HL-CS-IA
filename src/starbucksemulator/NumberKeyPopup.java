@@ -87,5 +87,6 @@ public class NumberKeyPopup extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton button1;
     // End of variables declaration//GEN-END:variables
 }
