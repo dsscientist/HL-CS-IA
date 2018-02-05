@@ -53,10 +53,6 @@ public class EmulatorPanel extends javax.swing.JPanel {
         labelTabs.setVisible(true);
         labelTabs.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
     }
-    
-    public void bringToFront(JTabbedPane jtp) {
-        
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.

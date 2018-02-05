@@ -45,6 +45,7 @@ public class NumberKeyScreen extends javax.swing.JPanel {
         displayLabel.setFont(new java.awt.Font("Cambria", 0, 24)); // NOI18N
         displayLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         displayLabel.setText("[Insert Text Here]");
+        displayLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         button2.setFont(new java.awt.Font("Cambria", 0, 36)); // NOI18N
         button2.setText("2");
