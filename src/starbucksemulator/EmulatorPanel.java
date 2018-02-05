@@ -9,7 +9,7 @@ import com.sun.prism.paint.Color;
 import java.awt.FontMetrics;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.sql.Connection;
+import java.sql.Statement;
 import javax.swing.JTabbedPane;
 import javax.swing.plaf.basic.BasicTabbedPaneUI;
 
@@ -19,10 +19,10 @@ import javax.swing.plaf.basic.BasicTabbedPaneUI;
  */
 public class EmulatorPanel extends javax.swing.JPanel {
 
-    private Connection con;
+    private Statement stmt;
     
-    public EmulatorPanel(Connection c) {
-        con = c;
+    public EmulatorPanel(Statement s) {
+        stmt = s;
         JTabbedPane labelTabs = new JTabbedPane(JTabbedPane.RIGHT);
         this.add(labelTabs);
         labelTabs.setSize(1024, 600);
@@ -48,7 +48,7 @@ public class EmulatorPanel extends javax.swing.JPanel {
         labelTabs.addTab("MILK", null, m2s, null);
         CustomScreen cs = new CustomScreen();
         labelTabs.addTab("CUSTOM", null, cs, null);
-        EspressoDrinkScreen eds = new EspressoDrinkScreen(con);
+        EspressoDrinkScreen eds = new EspressoDrinkScreen(stmt);
         labelTabs.addTab("ESPRESSO", null, eds, null);
         labelTabs.setVisible(true);
         labelTabs.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);

@@ -5,24 +5,29 @@
  */
 package starbucksemulator;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author shirdav18
  */
 public class NumberKeyPopup extends javax.swing.JFrame {
 
-    /**
-     * Creates new form QuantityPopup
-     */
-    public NumberKeyPopup() {
+    private int returnInt;
+    private static Statement stmt;
+    
+    public NumberKeyPopup(String title, Statement s) {
         initComponents();
-        this.setTitle("k;dfjasdklf");
+        stmt = s;
+        this.setTitle(title);
         this.setResizable(false);
+        this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         this.setLocation(400, 100);
-        NumberKeyScreen nks = new NumberKeyScreen();
-        this.add(nks);
-        nks.setLocation(0, 0);
-        nks.setVisible(true);
+        displayLabel.setText("");
     }
 
     /**
@@ -49,6 +54,11 @@ public class NumberKeyPopup extends javax.swing.JFrame {
         button0 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         button8.setFont(new java.awt.Font("Cambria", 0, 36)); // NOI18N
         button8.setText("8");
@@ -244,7 +254,17 @@ public class NumberKeyPopup extends javax.swing.JFrame {
     }//GEN-LAST:event_button2MouseClicked
 
     private void okayButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_okayButtonMouseClicked
-        System.out.println(displayLabel.getText());
+        returnInt = Integer.parseInt(displayLabel.getText());
+        try {
+            ResultSet rs = stmt.executeQuery("SELECT * FROM PARTNERINFO WHERE PARTNERNUMBER=\'US" + returnInt + "\'");
+            while (rs.next()) {
+                String s = rs.getString("PartnerNumber");
+                int i = rs.getInt("Pin");
+                System.out.println(s + " " + i);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(NumberKeyPopup.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_okayButtonMouseClicked
 
     private void button1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button1MouseClicked
@@ -270,6 +290,10 @@ public class NumberKeyPopup extends javax.swing.JFrame {
     private void button0MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button0MouseClicked
         displayLabel.setText(displayLabel.getText() + "0");
     }//GEN-LAST:event_button0MouseClicked
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        //do nothing
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments
@@ -302,7 +326,7 @@ public class NumberKeyPopup extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new NumberKeyPopup().setVisible(true);
+                new NumberKeyPopup("", stmt).setVisible(true);
             }
         });
     }

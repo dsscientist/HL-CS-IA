@@ -6,7 +6,7 @@ package starbucksemulator;
 import java.awt.FontMetrics;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.sql.Connection;
+import java.sql.Statement;
 import javax.swing.JTabbedPane;
 import javax.swing.SwingConstants;
 import javax.swing.plaf.basic.BasicTabbedPaneUI;
@@ -14,19 +14,19 @@ import javax.swing.plaf.basic.BasicTabbedPaneUI;
 
 public class MainInterface extends javax.swing.JFrame {
 
-    private static Connection con;
+    private static Statement stmt;
     
     public static javax.swing.JPanel[] panels = new javax.swing.JPanel[9];
     /*
     
     */
     
-    public MainInterface(Connection c) {
+    public MainInterface(Statement s) {
         initComponents();
-        con = c;
+        stmt = s;
         this.setTitle("Starbucks Emulator");
         this.setResizable(false);
-        EmulatorPanel ep = new EmulatorPanel(con);
+        EmulatorPanel ep = new EmulatorPanel(stmt);
         this.add(ep);
         ep.setLocation(125, 50);
         ep.setSize(1366, 768);
@@ -88,7 +88,7 @@ public class MainInterface extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MainInterface(con).setVisible(true);
+                new MainInterface(stmt).setVisible(true);
             }
         });
     }
