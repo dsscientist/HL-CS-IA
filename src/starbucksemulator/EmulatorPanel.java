@@ -44,11 +44,11 @@ public class EmulatorPanel extends javax.swing.JPanel {
         labelTabs.addTab("MAIN", null, ms, null);
         SyrupScreen ss = new SyrupScreen();
         labelTabs.addTab("SYRUP", null, ss, null);
-        MilkScreen m2s = new MilkScreen(con);
+        MilkScreen m2s = new MilkScreen();
         labelTabs.addTab("MILK", null, m2s, null);
         CustomScreen cs = new CustomScreen();
         labelTabs.addTab("CUSTOM", null, cs, null);
-        EspressoDrinkScreen eds = new EspressoDrinkScreen();
+        EspressoDrinkScreen eds = new EspressoDrinkScreen(con);
         labelTabs.addTab("ESPRESSO", null, eds, null);
         labelTabs.setVisible(true);
         labelTabs.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);

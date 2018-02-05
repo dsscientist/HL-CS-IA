@@ -1,0 +1,18 @@
+Mon Feb 05 07:05:46 PST 2018 : Apache Derby Network Server - 10.8.3.0 - (1405108) started and ready to accept connections on port 1527
+----------------------------------------------------------------
+Mon Feb 05 07:05:47 PST 2018:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.8.3.0 - (1405108): instance a816c00e-0161-6680-649b-ffff9d4aa184 
+on database directory C:\Users\David\Documents\NetBeansProjects\StarbucksEmulator\starbucksDB  with class loader sun.misc.Launcher$AppClassLoader@3b061299 
+Loaded from file:/C:/Program%20Files/Java/jdk1.7.0_45/db/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.7.0_45-b18
+user.dir=C:\Program Files\Java\jdk1.7.0_45\db
+os.name=Windows 7
+os.arch=amd64
+os.version=6.1
+derby.system.home=C:\Users\David\Documents\NetBeansProjects\StarbucksEmulator
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Mon Feb 05 07:06:01 PST 2018:
+Shutting down instance a816c00e-0161-6680-649b-ffff9d4aa184 on database directory C:\Users\David\Documents\NetBeansProjects\StarbucksEmulator\starbucksDB with class loader sun.misc.Launcher$AppClassLoader@3b061299 
+Mon Feb 05 07:06:01 PST 2018 Thread[DRDAConnThread_4,5,main] (DATABASE = starbucksDB), (DRDAID = {2}), Database 'starbucksDB' shutdown.
