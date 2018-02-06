@@ -19,13 +19,17 @@ public class NumberKeyPopup extends javax.swing.JFrame {
 
     private int returnInt;
     private static Statement stmt;
+    private static Order order;
+    private static DataMover dm;
     
-    public NumberKeyPopup(String title, Statement s) {
+    public NumberKeyPopup(String title, Statement s, Order o, DataMover d) {
         initComponents();
         stmt = s;
+        dm = d;
+        order = o;
         this.setTitle(title);
         this.setResizable(false);
-        this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        //this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         this.setLocation(400, 100);
         displayLabel.setText("");
     }
@@ -39,6 +43,9 @@ public class NumberKeyPopup extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jFrame1 = new javax.swing.JFrame();
+        jDialog1 = new javax.swing.JDialog();
+        jDialog2 = new javax.swing.JDialog();
         button8 = new javax.swing.JButton();
         button9 = new javax.swing.JButton();
         button7 = new javax.swing.JButton();
@@ -52,6 +59,39 @@ public class NumberKeyPopup extends javax.swing.JFrame {
         button6 = new javax.swing.JButton();
         button4 = new javax.swing.JButton();
         button0 = new javax.swing.JButton();
+
+        javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
+        jFrame1.getContentPane().setLayout(jFrame1Layout);
+        jFrame1Layout.setHorizontalGroup(
+            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jFrame1Layout.setVerticalGroup(
+            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
+        jDialog1.getContentPane().setLayout(jDialog1Layout);
+        jDialog1Layout.setHorizontalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jDialog1Layout.setVerticalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jDialog2Layout = new javax.swing.GroupLayout(jDialog2.getContentPane());
+        jDialog2.getContentPane().setLayout(jDialog2Layout);
+        jDialog2Layout.setHorizontalGroup(
+            jDialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jDialog2Layout.setVerticalGroup(
+            jDialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -254,18 +294,42 @@ public class NumberKeyPopup extends javax.swing.JFrame {
     }//GEN-LAST:event_button2MouseClicked
 
     private void okayButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_okayButtonMouseClicked
-        returnInt = Integer.parseInt(displayLabel.getText());
-        try {
-            ResultSet rs = stmt.executeQuery("SELECT * FROM PARTNERINFO WHERE PARTNERNUMBER=\'US" + returnInt + "\'");
-            String s;
-            if (rs.next()) {
-                s = rs.getString("PartnerName");
-                System.out.println(s + "?");
-            } else {
-                //not found
+        if (displayLabel.getText().equals("")) {
+            return;
+        }
+        if (this.getTitle().equals("LOGON")) {
+            returnInt = Integer.parseInt(displayLabel.getText());
+            try {
+                ResultSet rs = stmt.executeQuery("SELECT * FROM PARTNERINFO WHERE PARTNERNUMBER=\'US" + returnInt + "\'");
+                String s;
+                if (rs.next()) {
+                    displayLabel.setText("");
+                    this.setTitle("PIN");
+                } else {
+                    displayLabel.setText("");
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(NumberKeyPopup.class.getName()).log(Level.SEVERE, null, ex);
             }
-        } catch (SQLException ex) {
-            Logger.getLogger(NumberKeyPopup.class.getName()).log(Level.SEVERE, null, ex);
+        } else if (this.getTitle().equals("PIN")){
+            int i = Integer.parseInt(displayLabel.getText());
+            try {
+                ResultSet rs = stmt.executeQuery("SELECT * FROM PARTNERINFO WHERE PARTNERNUMBER=\'US" + returnInt + "\'");
+                String s;
+                if (rs.next()) {
+                    if (i == rs.getInt("Pin")) {
+                        System.out.println("yay");
+                    }
+                } else {
+                    displayLabel.setText("");
+                }
+                dm.setI(i);
+                dm.notifyAll();
+            } catch (SQLException ex) {
+                Logger.getLogger(NumberKeyPopup.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else {
+            
         }
     }//GEN-LAST:event_okayButtonMouseClicked
 
@@ -294,7 +358,7 @@ public class NumberKeyPopup extends javax.swing.JFrame {
     }//GEN-LAST:event_button0MouseClicked
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        //do nothing
+        
     }//GEN-LAST:event_formWindowClosing
 
     /**
@@ -328,7 +392,7 @@ public class NumberKeyPopup extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new NumberKeyPopup("", stmt).setVisible(true);
+                new NumberKeyPopup("", stmt, order, dm).setVisible(true);
             }
         });
     }
@@ -346,6 +410,9 @@ public class NumberKeyPopup extends javax.swing.JFrame {
     private javax.swing.JButton button8;
     private javax.swing.JButton button9;
     private javax.swing.JLabel displayLabel;
+    private javax.swing.JDialog jDialog1;
+    private javax.swing.JDialog jDialog2;
+    private javax.swing.JFrame jFrame1;
     private javax.swing.JButton okayButton;
     // End of variables declaration//GEN-END:variables
 }

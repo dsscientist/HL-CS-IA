@@ -15,14 +15,16 @@ import javax.swing.plaf.basic.BasicTabbedPaneUI;
 public class MainInterface extends javax.swing.JFrame {
 
     private static Statement stmt;
+    private static Order order;
     
     public static javax.swing.JPanel[] panels = new javax.swing.JPanel[9];
     /*
     
     */
     
-    public MainInterface(Statement s) {
+    public MainInterface(Statement s, Order o) {
         initComponents();
+        order = o;
         stmt = s;
         this.setTitle("Starbucks Emulator");
         this.setResizable(false);
@@ -41,6 +43,19 @@ public class MainInterface extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+
+        jDialog1 = new javax.swing.JDialog();
+
+        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
+        jDialog1.getContentPane().setLayout(jDialog1Layout);
+        jDialog1Layout.setHorizontalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jDialog1Layout.setVerticalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -88,11 +103,12 @@ public class MainInterface extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MainInterface(stmt).setVisible(true);
+                new MainInterface(stmt, order).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDialog jDialog1;
     // End of variables declaration//GEN-END:variables
 }
