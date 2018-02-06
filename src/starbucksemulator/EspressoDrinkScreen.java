@@ -5,17 +5,17 @@
  */
 package starbucksemulator;
 
-import java.sql.Connection;
+import java.sql.Statement;
 
 
 public class EspressoDrinkScreen extends javax.swing.JPanel {
     
     private javax.swing.JButton[] buttons = new javax.swing.JButton[24];
-    private Connection con;
+    private Statement stmt;
     
-    public EspressoDrinkScreen(Connection c) {
+    public EspressoDrinkScreen(Statement s) {
         initComponents();
-        con = c;
+        stmt = s;
         addButtons();
         addMouseListeners();
         roundButtons();

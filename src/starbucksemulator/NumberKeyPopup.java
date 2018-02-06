@@ -257,10 +257,12 @@ public class NumberKeyPopup extends javax.swing.JFrame {
         returnInt = Integer.parseInt(displayLabel.getText());
         try {
             ResultSet rs = stmt.executeQuery("SELECT * FROM PARTNERINFO WHERE PARTNERNUMBER=\'US" + returnInt + "\'");
-            while (rs.next()) {
-                String s = rs.getString("PartnerNumber");
-                int i = rs.getInt("Pin");
-                System.out.println(s + " " + i);
+            String s;
+            if (rs.next()) {
+                s = rs.getString("PartnerName");
+                System.out.println(s + "?");
+            } else {
+                //not found
             }
         } catch (SQLException ex) {
             Logger.getLogger(NumberKeyPopup.class.getName()).log(Level.SEVERE, null, ex);
