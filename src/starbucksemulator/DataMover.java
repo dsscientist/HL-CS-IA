@@ -3,6 +3,7 @@ package starbucksemulator;
 
 public class DataMover {
     private int i;
+    private boolean done = false;
     
     public DataMover() {
         
@@ -14,5 +15,20 @@ public class DataMover {
     
     public int getI() {
         return i;
+    }
+    
+    public synchronized void guardDone() {
+        while (!done) {
+            try {
+                wait();
+            } catch (InterruptedException e) {
+                
+            }
+        }
+    }
+    
+    public synchronized void notifyDone() {
+        done = true;
+        notifyAll();
     }
 }

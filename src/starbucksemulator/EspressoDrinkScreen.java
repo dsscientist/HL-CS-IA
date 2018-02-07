@@ -48,7 +48,7 @@ public class EspressoDrinkScreen extends javax.swing.JPanel {
         buttons[23] = withWholeBtn;
     }
     
-    public void addMouseListeners() {
+    private void addMouseListeners() {
         for (javax.swing.JButton b : buttons) {
             b.addMouseListener(new java.awt.event.MouseAdapter() {
                 public void mouseClicked(java.awt.event.MouseEvent evt) {

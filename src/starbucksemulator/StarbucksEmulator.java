@@ -18,7 +18,7 @@ public class StarbucksEmulator {
         DataMover dm = new DataMover();
         NumberKeyPopup nkp = new NumberKeyPopup("LOGON", stmt, order, dm);
         nkp.setVisible(true);
-        dm.wait();
+        dm.guardDone();
         System.out.println(dm.getI());
         ResultSet rs = stmt.executeQuery("SELECT * FROM PartnerInfo");
         while (rs.next()) {

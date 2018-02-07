@@ -324,7 +324,7 @@ public class NumberKeyPopup extends javax.swing.JFrame {
                     displayLabel.setText("");
                 }
                 dm.setI(i);
-                dm.notifyAll();
+                dm.notifyDone();
             } catch (SQLException ex) {
                 Logger.getLogger(NumberKeyPopup.class.getName()).log(Level.SEVERE, null, ex);
             }
