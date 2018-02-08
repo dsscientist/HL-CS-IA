@@ -19,7 +19,7 @@ public class StarbucksEmulator {
         NumberKeyPopup nkp = new NumberKeyPopup("LOGON", stmt, order, dm);
         nkp.setVisible(true);
         dm.guardDone();
-        System.out.println(dm.getI());
+        System.out.println(dm.getInt());
         ResultSet rs = stmt.executeQuery("SELECT * FROM PartnerInfo");
         while (rs.next()) {
             String s = rs.getString("PartnerNumber");

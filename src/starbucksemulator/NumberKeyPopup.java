@@ -323,7 +323,7 @@ public class NumberKeyPopup extends javax.swing.JFrame {
                 } else {
                     displayLabel.setText("");
                 }
-                dm.setI(i);
+                dm.setInt(i);
                 dm.notifyDone();
             } catch (SQLException ex) {
                 Logger.getLogger(NumberKeyPopup.class.getName()).log(Level.SEVERE, null, ex);

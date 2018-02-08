@@ -21,13 +21,280 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="1024" max="32767" attributes="0"/>
+          <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="shortBtn" alignment="0" min="-2" pref="155" max="-2" attributes="0"/>
+                          <Component id="soloBtn" alignment="0" min="-2" pref="155" max="-2" attributes="0"/>
+                          <Component id="icedBtn" alignment="0" min="-2" pref="155" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="tallBtn" alignment="1" min="-2" pref="155" max="-2" attributes="0"/>
+                          <Component id="doppioBtn" alignment="1" min="-2" pref="155" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Component id="kidsBtn" alignment="0" min="-2" pref="155" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="grandeBtn" alignment="0" min="-2" pref="155" max="-2" attributes="0"/>
+                          <Component id="tripleBtn" alignment="0" min="-2" pref="155" max="-2" attributes="0"/>
+                          <Component id="blondeBtn" alignment="0" min="-2" pref="155" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="ventiBtn" alignment="1" min="-2" pref="155" max="-2" attributes="0"/>
+                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                              <Component id="quadBtn" alignment="0" min="-2" pref="155" max="-2" attributes="0"/>
+                              <Component id="decafBtn" alignment="0" min="-2" pref="155" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Component id="updosedBtn" min="-2" pref="155" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="43" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="ristrettoBtn" alignment="1" min="-2" pref="155" max="-2" attributes="0"/>
+                  <Component id="moreShotsBtn" alignment="1" min="-2" pref="155" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="600" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="moreShotsBtn" min="-2" pref="60" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
+                      <Component id="ristrettoBtn" min="-2" pref="60" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="blondeBtn" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                                  <Component id="decafBtn" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace pref="156" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="tripleBtn" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                                  <Component id="quadBtn" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
+                              <Component id="updosedBtn" min="-2" pref="60" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="grandeBtn" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                                  <Component id="ventiBtn" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="icedBtn" min="-2" pref="60" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="soloBtn" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                                  <Component id="doppioBtn" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
+                              <Component id="kidsBtn" min="-2" pref="60" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="shortBtn" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                                  <Component id="tallBtn" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JButton" name="doppioBtn">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="cc" red="cc" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Cambria" size="13" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Doppio"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="kidsBtn">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="99" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Cambria" size="13" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Kids"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="shortBtn">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="99" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Cambria" size="13" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Short"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="tallBtn">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="99" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Cambria" size="13" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Tall"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="icedBtn">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="cc" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Cambria" size="13" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Iced"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="icedBtnMouseClicked"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="soloBtn">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="cc" red="cc" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Cambria" size="13" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Solo"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="grandeBtn">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="99" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Cambria" size="13" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Grande"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="quadBtn">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="cc" red="cc" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Cambria" size="13" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Quad"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="tripleBtn">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="cc" red="cc" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Cambria" size="13" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Triple"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="ventiBtn">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="99" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Cambria" size="13" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Venti"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="blondeBtn">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="cc" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Cambria" size="13" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Blonde"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="blondeBtnMouseClicked"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="decafBtn">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="cc" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Cambria" size="13" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Decaf"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="ristrettoBtn">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="cc" red="cc" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Cambria" size="13" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Ristretto"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="moreShotsBtn">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="cc" red="cc" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Cambria" size="13" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="More Shots"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="updosedBtn">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="cc" red="cc" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Cambria" size="13" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Updosed"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="updosedBtnActionPerformed"/>
+      </Events>
+    </Component>
+  </SubComponents>
 </Form>

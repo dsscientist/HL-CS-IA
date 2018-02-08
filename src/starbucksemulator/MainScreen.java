@@ -11,13 +11,38 @@ package starbucksemulator;
  */
 public class MainScreen extends javax.swing.JPanel {
 
-    /**
-     * Creates new form MainScreen
-     */
+    private javax.swing.JButton[] buttons = new javax.swing.JButton[15];
+        
     public MainScreen() {
         initComponents();
+        addButtons();
+        roundButtons();
     }
 
+    private void addButtons() {
+        buttons[0] = blondeBtn;
+        buttons[1] = decafBtn;
+        buttons[2] = doppioBtn;
+        buttons[3] = grandeBtn;
+        buttons[4] = icedBtn;
+        buttons[5] = kidsBtn;
+        buttons[6] = moreShotsBtn;
+        buttons[7] = quadBtn;
+        buttons[8] = ristrettoBtn;
+        buttons[9] = shortBtn;
+        buttons[10] = soloBtn;
+        buttons[11] = tallBtn;
+        buttons[12] = tripleBtn;
+        buttons[13] = updosedBtn;
+        buttons[14] = ventiBtn;
+    }
+    
+    private void roundButtons() {
+        for (javax.swing.JButton b : buttons) {
+            b.setBorder(new RoundedBorder(10));
+        }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,21 +52,207 @@ public class MainScreen extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        doppioBtn = new javax.swing.JButton();
+        kidsBtn = new javax.swing.JButton();
+        shortBtn = new javax.swing.JButton();
+        tallBtn = new javax.swing.JButton();
+        icedBtn = new javax.swing.JButton();
+        soloBtn = new javax.swing.JButton();
+        grandeBtn = new javax.swing.JButton();
+        quadBtn = new javax.swing.JButton();
+        tripleBtn = new javax.swing.JButton();
+        ventiBtn = new javax.swing.JButton();
+        blondeBtn = new javax.swing.JButton();
+        decafBtn = new javax.swing.JButton();
+        ristrettoBtn = new javax.swing.JButton();
+        moreShotsBtn = new javax.swing.JButton();
+        updosedBtn = new javax.swing.JButton();
+
         setPreferredSize(new java.awt.Dimension(1024, 600));
+
+        doppioBtn.setBackground(new java.awt.Color(204, 204, 255));
+        doppioBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        doppioBtn.setText("Doppio");
+
+        kidsBtn.setBackground(new java.awt.Color(255, 255, 153));
+        kidsBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        kidsBtn.setText("Kids");
+
+        shortBtn.setBackground(new java.awt.Color(255, 255, 153));
+        shortBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        shortBtn.setText("Short");
+
+        tallBtn.setBackground(new java.awt.Color(255, 255, 153));
+        tallBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        tallBtn.setText("Tall");
+
+        icedBtn.setBackground(new java.awt.Color(204, 255, 255));
+        icedBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        icedBtn.setText("Iced");
+        icedBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                icedBtnMouseClicked(evt);
+            }
+        });
+
+        soloBtn.setBackground(new java.awt.Color(204, 204, 255));
+        soloBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        soloBtn.setText("Solo");
+
+        grandeBtn.setBackground(new java.awt.Color(255, 255, 153));
+        grandeBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        grandeBtn.setText("Grande");
+
+        quadBtn.setBackground(new java.awt.Color(204, 204, 255));
+        quadBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        quadBtn.setText("Quad");
+
+        tripleBtn.setBackground(new java.awt.Color(204, 204, 255));
+        tripleBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        tripleBtn.setText("Triple");
+
+        ventiBtn.setBackground(new java.awt.Color(255, 255, 153));
+        ventiBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        ventiBtn.setText("Venti");
+
+        blondeBtn.setBackground(new java.awt.Color(204, 255, 255));
+        blondeBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        blondeBtn.setText("Blonde");
+        blondeBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                blondeBtnMouseClicked(evt);
+            }
+        });
+
+        decafBtn.setBackground(new java.awt.Color(204, 255, 255));
+        decafBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        decafBtn.setText("Decaf");
+
+        ristrettoBtn.setBackground(new java.awt.Color(204, 204, 255));
+        ristrettoBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        ristrettoBtn.setText("Ristretto");
+
+        moreShotsBtn.setBackground(new java.awt.Color(204, 204, 255));
+        moreShotsBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        moreShotsBtn.setText("More Shots");
+
+        updosedBtn.setBackground(new java.awt.Color(204, 204, 255));
+        updosedBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        updosedBtn.setText("Updosed");
+        updosedBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updosedBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1024, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(shortBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(soloBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(icedBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(46, 46, 46)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(tallBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(doppioBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(kidsBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(47, 47, 47)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(grandeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tripleBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(blondeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(46, 46, 46)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(ventiBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(quadBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(decafBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(updosedBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ristrettoBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(moreShotsBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(moreShotsBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(96, 96, 96)
+                        .addComponent(ristrettoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(78, 78, 78))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(blondeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(decafBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 156, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(tripleBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(quadBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(96, 96, 96)
+                                .addComponent(updosedBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(grandeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(ventiBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(icedBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(soloBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(doppioBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(96, 96, 96)
+                                .addComponent(kidsBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(shortBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tallBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addGap(40, 40, 40))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void icedBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icedBtnMouseClicked
+
+    }//GEN-LAST:event_icedBtnMouseClicked
+
+    private void blondeBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_blondeBtnMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_blondeBtnMouseClicked
+
+    private void updosedBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updosedBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_updosedBtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton blondeBtn;
+    private javax.swing.JButton decafBtn;
+    private javax.swing.JButton doppioBtn;
+    private javax.swing.JButton grandeBtn;
+    private javax.swing.JButton icedBtn;
+    private javax.swing.JButton kidsBtn;
+    private javax.swing.JButton moreShotsBtn;
+    private javax.swing.JButton quadBtn;
+    private javax.swing.JButton ristrettoBtn;
+    private javax.swing.JButton shortBtn;
+    private javax.swing.JButton soloBtn;
+    private javax.swing.JButton tallBtn;
+    private javax.swing.JButton tripleBtn;
+    private javax.swing.JButton updosedBtn;
+    private javax.swing.JButton ventiBtn;
     // End of variables declaration//GEN-END:variables
 }

@@ -44,7 +44,7 @@ public class EmulatorPanel extends javax.swing.JPanel {
         labelTabs.addTab("MAIN", null, ms, null);
         SyrupScreen ss = new SyrupScreen();
         labelTabs.addTab("SYRUP", null, ss, null);
-        MilkScreen m2s = new MilkScreen();
+        MilkScreen m2s = new MilkScreen(stmt);
         labelTabs.addTab("MILK", null, m2s, null);
         CustomScreen cs = new CustomScreen();
         labelTabs.addTab("CUSTOM", null, cs, null);
