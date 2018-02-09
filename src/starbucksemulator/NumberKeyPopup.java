@@ -19,14 +19,12 @@ public class NumberKeyPopup extends javax.swing.JFrame {
 
     private int returnInt;
     private static Statement stmt;
-    private static Order order;
     private static DataMover dm;
     
-    public NumberKeyPopup(String title, Statement s, Order o, DataMover d) {
+    public NumberKeyPopup(String title, Statement s, DataMover d) {
         initComponents();
         stmt = s;
         dm = d;
-        order = o;
         this.setTitle(title);
         this.setResizable(false);
         //this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
@@ -392,7 +390,7 @@ public class NumberKeyPopup extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new NumberKeyPopup("", stmt, order, dm).setVisible(true);
+                new NumberKeyPopup("", stmt, dm).setVisible(true);
             }
         });
     }

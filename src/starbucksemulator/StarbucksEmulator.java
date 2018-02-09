@@ -16,17 +16,17 @@ public class StarbucksEmulator {
                 ,"dsscientist","ilovemom100%"); //don't worry, fake useless passsword
         Statement stmt = con.createStatement();
         DataMover dm = new DataMover();
-        NumberKeyPopup nkp = new NumberKeyPopup("LOGON", stmt, order, dm);
+        /*NumberKeyPopup nkp = new NumberKeyPopup("LOGON", stmt, order, dm);
         nkp.setVisible(true);
         dm.guardDone();
-        System.out.println(dm.getInt());
+        System.out.println(dm.getInt());*/
         ResultSet rs = stmt.executeQuery("SELECT * FROM PartnerInfo");
         while (rs.next()) {
             String s = rs.getString("PartnerNumber");
             int i = rs.getInt("Pin");
             System.out.println(s + " " + i);
         }
-        MainInterface mi = new MainInterface(stmt, order);
+        MainInterface mi = new MainInterface(stmt);
         mi.setVisible(true);
     }
     

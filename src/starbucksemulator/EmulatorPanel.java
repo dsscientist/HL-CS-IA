@@ -11,6 +11,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.Statement;
 import javax.swing.JTabbedPane;
+import javax.swing.ScrollPaneConstants;
 import javax.swing.plaf.basic.BasicTabbedPaneUI;
 
 /**
@@ -22,11 +23,9 @@ public class EmulatorPanel extends javax.swing.JPanel {
     private Statement stmt;
     
     public EmulatorPanel(Statement s) {
+        initComponents();
         stmt = s;
-        JTabbedPane labelTabs = new JTabbedPane(JTabbedPane.RIGHT);
-        this.add(labelTabs);
-        labelTabs.setSize(1024, 600);
-        labelTabs.setLocation(342, 70);
+        labelTabs.setTabPlacement(JTabbedPane.RIGHT);
         labelTabs.setUI(new BasicTabbedPaneUI() {
             @Override
             protected int calculateTabWidth(
@@ -37,7 +36,7 @@ public class EmulatorPanel extends javax.swing.JPanel {
             @Override
             protected int calculateTabHeight(
                     int tabPlacement, int tabIndex, int fontHeight) {
-                return 121;
+                return 119;
             }
         });
         MainScreen ms = new MainScreen();
@@ -52,6 +51,10 @@ public class EmulatorPanel extends javax.swing.JPanel {
         labelTabs.addTab("ESPRESSO", null, eds, null);
         labelTabs.setVisible(true);
         labelTabs.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
+        itemDisplay.setEditable(false);
+        itemDisplay.setText("water is the key element of the earth blah blah here we go");
+        itemDisplay.setLineWrap(true);
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
     }
 
     /**
@@ -63,19 +66,41 @@ public class EmulatorPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        labelTabs = new javax.swing.JTabbedPane();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        itemDisplay = new javax.swing.JTextArea();
+
+        itemDisplay.setColumns(20);
+        itemDisplay.setFont(new java.awt.Font("Cambria", 0, 14)); // NOI18N
+        itemDisplay.setRows(5);
+        jScrollPane1.setViewportView(itemDisplay);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1366, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(labelTabs, javax.swing.GroupLayout.PREFERRED_SIZE, 1124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 768, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(82, 82, 82)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
+                    .addComponent(labelTabs))
+                .addContainerGap(86, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextArea itemDisplay;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTabbedPane labelTabs;
     // End of variables declaration//GEN-END:variables
 }

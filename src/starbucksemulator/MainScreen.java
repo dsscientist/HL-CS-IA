@@ -12,6 +12,7 @@ package starbucksemulator;
 public class MainScreen extends javax.swing.JPanel {
 
     private javax.swing.JButton[] buttons = new javax.swing.JButton[15];
+    private Drink current;
         
     public MainScreen() {
         initComponents();
@@ -225,12 +226,26 @@ public class MainScreen extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void checkCurrentNull() {
+        if (StarbucksEmulator.order.current() == null) {
+            StarbucksEmulator.order.addItem(new Drink());
+            current = (Drink)StarbucksEmulator.order.current();
+        }
+    }
+    
+    private void updateText() {
+        
+    }
+    
     private void icedBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icedBtnMouseClicked
-
+        checkCurrentNull();
+        current.setIced();
+        updateText();
     }//GEN-LAST:event_icedBtnMouseClicked
 
     private void blondeBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_blondeBtnMouseClicked
-        // TODO add your handling code here:
+        checkCurrentNull();
+        
     }//GEN-LAST:event_blondeBtnMouseClicked
 
     private void updosedBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updosedBtnActionPerformed

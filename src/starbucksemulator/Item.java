@@ -2,9 +2,12 @@ package starbucksemulator;
 
 
 public abstract class Item {
-    private String name;
-    private double price;
-    private String askMe;
+    protected String name;
+    protected double price;
+    
+    public Item() {
+        
+    }
     
     public Item(String s, double d) {
         setName(s);
