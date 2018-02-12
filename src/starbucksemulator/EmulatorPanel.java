@@ -52,10 +52,15 @@ public class EmulatorPanel extends javax.swing.JPanel {
         labelTabs.setVisible(true);
         labelTabs.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
         itemDisplay.setEditable(false);
-        itemDisplay.setText("water is the key element of the earth blah blah here we go");
+        itemDisplay.setText("");
         itemDisplay.setLineWrap(true);
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
     }
+    
+    public void updateText(String s) {
+        itemDisplay.setText(s);
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.

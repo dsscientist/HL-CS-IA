@@ -56,9 +56,8 @@ public class EspressoTest {
     @Test
     public void testSetDecaf() {
         System.out.println("setDecaf");
-        boolean b = false;
         Espresso instance = new Espresso();
-        instance.setDecaf(b);
+        instance.setDecaf();
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }
@@ -82,9 +81,8 @@ public class EspressoTest {
     @Test
     public void testSetRistretto() {
         System.out.println("setRistretto");
-        boolean b = false;
         Espresso instance = new Espresso();
-        instance.setRistretto(b);
+        instance.setRistretto();
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
     }

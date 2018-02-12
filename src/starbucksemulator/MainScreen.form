@@ -132,6 +132,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Doppio"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="doppioBtnMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="kidsBtn">
       <Properties>
@@ -143,6 +146,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Kids"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="kidsBtnMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="shortBtn">
       <Properties>
@@ -154,6 +160,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Short"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="shortBtnMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="tallBtn">
       <Properties>
@@ -165,6 +174,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Tall"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tallBtnMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="icedBtn">
       <Properties>
@@ -190,6 +202,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Solo"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="soloBtnMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="grandeBtn">
       <Properties>
@@ -201,6 +216,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Grande"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="grandeBtnMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="quadBtn">
       <Properties>
@@ -212,6 +230,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Quad"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="quadBtnMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="tripleBtn">
       <Properties>
@@ -223,6 +244,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Triple"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tripleBtnMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="ventiBtn">
       <Properties>
@@ -234,6 +258,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Venti"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ventiBtnMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="blondeBtn">
       <Properties>
@@ -259,6 +286,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Decaf"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="decafBtnMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="ristrettoBtn">
       <Properties>
@@ -270,6 +300,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Ristretto"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ristrettoBtnMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="moreShotsBtn">
       <Properties>
@@ -281,6 +314,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="More Shots"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="moreShotsBtnMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="updosedBtn">
       <Properties>
@@ -293,6 +329,7 @@
         <Property name="text" type="java.lang.String" value="Updosed"/>
       </Properties>
       <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="updosedBtnMouseClicked"/>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="updosedBtnActionPerformed"/>
       </Events>
     </Component>

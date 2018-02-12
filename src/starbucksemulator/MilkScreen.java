@@ -12,6 +12,7 @@ public class MilkScreen extends javax.swing.JPanel {
     
     private javax.swing.JButton[] buttons = new javax.swing.JButton[24];
     private Statement stmt;
+    private Drink current;
     
     public MilkScreen(Statement s) {
         initComponents();
@@ -24,7 +25,7 @@ public class MilkScreen extends javax.swing.JPanel {
     private void addButtons() {
         buttons[0] = almondMilkBtn;
         buttons[1] = coconutMilkBtn;
-        buttons[2] = dairyButton;
+        buttons[2] = dairyBtn;
         buttons[3] = eggnogBtn;
         buttons[4] = extraBtn;
         buttons[5] = halfNHalfBtn;
@@ -84,7 +85,7 @@ public class MilkScreen extends javax.swing.JPanel {
         halfNHalfBtn = new javax.swing.JButton();
         heavyCreamBtn = new javax.swing.JButton();
         eggnogBtn = new javax.swing.JButton();
-        dairyButton = new javax.swing.JButton();
+        dairyBtn = new javax.swing.JButton();
         withAlmondBtn = new javax.swing.JButton();
         withHalfNHalfBtn = new javax.swing.JButton();
         withHeavyCreamBtn = new javax.swing.JButton();
@@ -110,46 +111,101 @@ public class MilkScreen extends javax.swing.JPanel {
         onePMilkBtn.setBackground(new java.awt.Color(204, 255, 255));
         onePMilkBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
         onePMilkBtn.setText("1% Milk");
+        onePMilkBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                onePMilkBtnMouseClicked(evt);
+            }
+        });
 
         twoPMilkBtn.setBackground(new java.awt.Color(204, 255, 255));
         twoPMilkBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
         twoPMilkBtn.setText("2% Milk");
+        twoPMilkBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                twoPMilkBtnMouseClicked(evt);
+            }
+        });
 
         wholeMilkBtn.setBackground(new java.awt.Color(204, 255, 255));
         wholeMilkBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
         wholeMilkBtn.setText("Whole Milk");
+        wholeMilkBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                wholeMilkBtnMouseClicked(evt);
+            }
+        });
 
         soyMilkBtn.setBackground(new java.awt.Color(255, 255, 204));
         soyMilkBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
         soyMilkBtn.setText("Soy Milk");
+        soyMilkBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                soyMilkBtnMouseClicked(evt);
+            }
+        });
 
         lactaidMilkBtn.setBackground(new java.awt.Color(255, 255, 204));
         lactaidMilkBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
         lactaidMilkBtn.setText("Lactaid Milk");
+        lactaidMilkBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lactaidMilkBtnMouseClicked(evt);
+            }
+        });
 
         coconutMilkBtn.setBackground(new java.awt.Color(255, 255, 204));
         coconutMilkBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
         coconutMilkBtn.setText("Coconut Milk");
+        coconutMilkBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                coconutMilkBtnMouseClicked(evt);
+            }
+        });
 
         almondMilkBtn.setBackground(new java.awt.Color(255, 255, 204));
         almondMilkBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
         almondMilkBtn.setText("Almond Milk");
+        almondMilkBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                almondMilkBtnMouseClicked(evt);
+            }
+        });
 
         halfNHalfBtn.setBackground(new java.awt.Color(204, 204, 255));
         halfNHalfBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
         halfNHalfBtn.setText("Half & Half (Breve)");
+        halfNHalfBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                halfNHalfBtnMouseClicked(evt);
+            }
+        });
 
         heavyCreamBtn.setBackground(new java.awt.Color(204, 204, 255));
         heavyCreamBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
         heavyCreamBtn.setText("Heavy Cream");
+        heavyCreamBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                heavyCreamBtnMouseClicked(evt);
+            }
+        });
 
         eggnogBtn.setBackground(new java.awt.Color(204, 204, 255));
         eggnogBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
         eggnogBtn.setText("Eggnog");
+        eggnogBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                eggnogBtnMouseClicked(evt);
+            }
+        });
 
-        dairyButton.setBackground(new java.awt.Color(204, 204, 204));
-        dairyButton.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
-        dairyButton.setText("Add Dairy");
+        dairyBtn.setBackground(new java.awt.Color(204, 204, 204));
+        dairyBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        dairyBtn.setText("Add Dairy");
+        dairyBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                dairyBtnMouseClicked(evt);
+            }
+        });
 
         withAlmondBtn.setBackground(new java.awt.Color(255, 255, 204));
         withAlmondBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
@@ -216,7 +272,7 @@ public class MilkScreen extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(eggnogBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(dairyButton, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(dairyBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(halfNHalfBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -324,24 +380,103 @@ public class MilkScreen extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(eggnogBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dairyButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(dairyBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(40, 40, 40))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void checkCurrentNull() {
+        if (StarbucksEmulator.order.current() == null) {
+            StarbucksEmulator.order.addItem(new Drink());
+            current = (Drink)StarbucksEmulator.order.current();
+        }
+    }
+    
+    private void updateText() {
+        ((EmulatorPanel)this.getParent().getParent()).updateText(current.toString());
+    }
+    
     private void withHeavyCreamBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_withHeavyCreamBtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_withHeavyCreamBtnActionPerformed
 
     private void nonfatMilkBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nonfatMilkBtnMouseClicked
-        
+        checkCurrentNull();
+        current.setMilk(nonfatMilkBtn.getText());
+        updateText();
     }//GEN-LAST:event_nonfatMilkBtnMouseClicked
+
+    private void onePMilkBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_onePMilkBtnMouseClicked
+        checkCurrentNull();
+        current.setMilk(onePMilkBtn.getText());
+        updateText();
+    }//GEN-LAST:event_onePMilkBtnMouseClicked
+
+    private void twoPMilkBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_twoPMilkBtnMouseClicked
+        checkCurrentNull();
+        current.setMilk(twoPMilkBtn.getText());
+        updateText();
+    }//GEN-LAST:event_twoPMilkBtnMouseClicked
+
+    private void wholeMilkBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_wholeMilkBtnMouseClicked
+        checkCurrentNull();
+        current.setMilk(wholeMilkBtn.getText());
+        updateText();
+    }//GEN-LAST:event_wholeMilkBtnMouseClicked
+
+    private void soyMilkBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_soyMilkBtnMouseClicked
+        checkCurrentNull();
+        current.setMilk(soyMilkBtn.getText());
+        updateText();
+    }//GEN-LAST:event_soyMilkBtnMouseClicked
+
+    private void lactaidMilkBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lactaidMilkBtnMouseClicked
+        checkCurrentNull();
+        current.setMilk(lactaidMilkBtn.getText());
+        updateText();
+    }//GEN-LAST:event_lactaidMilkBtnMouseClicked
+
+    private void coconutMilkBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_coconutMilkBtnMouseClicked
+        checkCurrentNull();
+        current.setMilk(coconutMilkBtn.getText());
+        updateText();
+    }//GEN-LAST:event_coconutMilkBtnMouseClicked
+
+    private void almondMilkBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_almondMilkBtnMouseClicked
+        checkCurrentNull();
+        current.setMilk(almondMilkBtn.getText());
+        updateText();
+    }//GEN-LAST:event_almondMilkBtnMouseClicked
+
+    private void halfNHalfBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_halfNHalfBtnMouseClicked
+        checkCurrentNull();
+        current.setMilk(halfNHalfBtn.getText());
+        updateText();
+    }//GEN-LAST:event_halfNHalfBtnMouseClicked
+
+    private void heavyCreamBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_heavyCreamBtnMouseClicked
+        checkCurrentNull();
+        current.setMilk(heavyCreamBtn.getText());
+        updateText();
+    }//GEN-LAST:event_heavyCreamBtnMouseClicked
+
+    private void eggnogBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eggnogBtnMouseClicked
+        checkCurrentNull();
+        current.setMilk(eggnogBtn.getText());
+        updateText();
+    }//GEN-LAST:event_eggnogBtnMouseClicked
+
+    private void dairyBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dairyBtnMouseClicked
+        checkCurrentNull();
+        current.setMilk(dairyBtn.getText());
+        updateText();
+    }//GEN-LAST:event_dairyBtnMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton almondMilkBtn;
     private javax.swing.JButton coconutMilkBtn;
-    private javax.swing.JButton dairyButton;
+    private javax.swing.JButton dairyBtn;
     private javax.swing.JButton eggnogBtn;
     private javax.swing.JButton extraBtn;
     private javax.swing.JButton halfNHalfBtn;

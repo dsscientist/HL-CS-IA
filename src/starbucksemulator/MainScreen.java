@@ -5,6 +5,9 @@
  */
 package starbucksemulator;
 
+import javax.swing.JFrame;
+
+
 /**
  *
  * @author shirdav18
@@ -74,18 +77,38 @@ public class MainScreen extends javax.swing.JPanel {
         doppioBtn.setBackground(new java.awt.Color(204, 204, 255));
         doppioBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
         doppioBtn.setText("Doppio");
+        doppioBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                doppioBtnMouseClicked(evt);
+            }
+        });
 
         kidsBtn.setBackground(new java.awt.Color(255, 255, 153));
         kidsBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
         kidsBtn.setText("Kids");
+        kidsBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                kidsBtnMouseClicked(evt);
+            }
+        });
 
         shortBtn.setBackground(new java.awt.Color(255, 255, 153));
         shortBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
         shortBtn.setText("Short");
+        shortBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                shortBtnMouseClicked(evt);
+            }
+        });
 
         tallBtn.setBackground(new java.awt.Color(255, 255, 153));
         tallBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
         tallBtn.setText("Tall");
+        tallBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tallBtnMouseClicked(evt);
+            }
+        });
 
         icedBtn.setBackground(new java.awt.Color(204, 255, 255));
         icedBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
@@ -99,22 +122,47 @@ public class MainScreen extends javax.swing.JPanel {
         soloBtn.setBackground(new java.awt.Color(204, 204, 255));
         soloBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
         soloBtn.setText("Solo");
+        soloBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                soloBtnMouseClicked(evt);
+            }
+        });
 
         grandeBtn.setBackground(new java.awt.Color(255, 255, 153));
         grandeBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
         grandeBtn.setText("Grande");
+        grandeBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                grandeBtnMouseClicked(evt);
+            }
+        });
 
         quadBtn.setBackground(new java.awt.Color(204, 204, 255));
         quadBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
         quadBtn.setText("Quad");
+        quadBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                quadBtnMouseClicked(evt);
+            }
+        });
 
         tripleBtn.setBackground(new java.awt.Color(204, 204, 255));
         tripleBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
         tripleBtn.setText("Triple");
+        tripleBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tripleBtnMouseClicked(evt);
+            }
+        });
 
         ventiBtn.setBackground(new java.awt.Color(255, 255, 153));
         ventiBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
         ventiBtn.setText("Venti");
+        ventiBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ventiBtnMouseClicked(evt);
+            }
+        });
 
         blondeBtn.setBackground(new java.awt.Color(204, 255, 255));
         blondeBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
@@ -128,18 +176,38 @@ public class MainScreen extends javax.swing.JPanel {
         decafBtn.setBackground(new java.awt.Color(204, 255, 255));
         decafBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
         decafBtn.setText("Decaf");
+        decafBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                decafBtnMouseClicked(evt);
+            }
+        });
 
         ristrettoBtn.setBackground(new java.awt.Color(204, 204, 255));
         ristrettoBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
         ristrettoBtn.setText("Ristretto");
+        ristrettoBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ristrettoBtnMouseClicked(evt);
+            }
+        });
 
         moreShotsBtn.setBackground(new java.awt.Color(204, 204, 255));
         moreShotsBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
         moreShotsBtn.setText("More Shots");
+        moreShotsBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                moreShotsBtnMouseClicked(evt);
+            }
+        });
 
         updosedBtn.setBackground(new java.awt.Color(204, 204, 255));
         updosedBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
         updosedBtn.setText("Updosed");
+        updosedBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                updosedBtnMouseClicked(evt);
+            }
+        });
         updosedBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 updosedBtnActionPerformed(evt);
@@ -234,7 +302,7 @@ public class MainScreen extends javax.swing.JPanel {
     }
     
     private void updateText() {
-        
+        ((EmulatorPanel)this.getParent().getParent()).updateText(current.toString());
     }
     
     private void icedBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icedBtnMouseClicked
@@ -245,12 +313,95 @@ public class MainScreen extends javax.swing.JPanel {
 
     private void blondeBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_blondeBtnMouseClicked
         checkCurrentNull();
-        
+        current.getEspresso().setRoast(Roast.BLONDE);
+        updateText();
     }//GEN-LAST:event_blondeBtnMouseClicked
 
     private void updosedBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updosedBtnActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_updosedBtnActionPerformed
+
+    private void decafBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decafBtnMouseClicked
+        checkCurrentNull();
+        current.getEspresso().setDecaf();
+        updateText();
+    }//GEN-LAST:event_decafBtnMouseClicked
+
+    private void updosedBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updosedBtnMouseClicked
+        checkCurrentNull();
+        current.getEspresso().setShots(current.getEspresso().getShotNum() + 1);
+        updateText();
+    }//GEN-LAST:event_updosedBtnMouseClicked
+
+    private void soloBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_soloBtnMouseClicked
+        checkCurrentNull();
+        current.getEspresso().setShots(1);
+        updateText();
+    }//GEN-LAST:event_soloBtnMouseClicked
+
+    private void doppioBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_doppioBtnMouseClicked
+        checkCurrentNull();
+        current.getEspresso().setShots(2);
+        updateText();
+    }//GEN-LAST:event_doppioBtnMouseClicked
+
+    private void tripleBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tripleBtnMouseClicked
+        checkCurrentNull();
+        current.getEspresso().setShots(3);
+        updateText();
+    }//GEN-LAST:event_tripleBtnMouseClicked
+
+    private void quadBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_quadBtnMouseClicked
+        checkCurrentNull();
+        current.getEspresso().setShots(4);
+        updateText();
+    }//GEN-LAST:event_quadBtnMouseClicked
+
+    private void moreShotsBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_moreShotsBtnMouseClicked
+        checkCurrentNull();
+        DataMover dm = StarbucksEmulator.dm;
+        NumberKeyPopup nkp = new NumberKeyPopup("QUANTITY", StarbucksEmulator.stmt, dm);
+        nkp.setVisible(true);
+        dm.guardDone();
+        current.getEspresso().setShots(dm.getInt());
+        updateText();
+    }//GEN-LAST:event_moreShotsBtnMouseClicked
+
+    private void ristrettoBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ristrettoBtnMouseClicked
+        checkCurrentNull();
+        current.getEspresso().setRistretto();
+        updateText();
+    }//GEN-LAST:event_ristrettoBtnMouseClicked
+
+    private void kidsBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kidsBtnMouseClicked
+        checkCurrentNull();
+        current.setSize(kidsBtn.getText().toUpperCase());
+        updateText();
+    }//GEN-LAST:event_kidsBtnMouseClicked
+
+    private void shortBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_shortBtnMouseClicked
+        checkCurrentNull();
+        current.setSize(shortBtn.getText().toUpperCase());
+        updateText();
+    }//GEN-LAST:event_shortBtnMouseClicked
+
+    private void tallBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tallBtnMouseClicked
+        checkCurrentNull();
+        current.setSize(tallBtn.getText().toUpperCase());
+        updateText();
+    }//GEN-LAST:event_tallBtnMouseClicked
+
+    private void grandeBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_grandeBtnMouseClicked
+        checkCurrentNull();
+        current.setSize(grandeBtn.getText().toUpperCase());
+        updateText();
+    }//GEN-LAST:event_grandeBtnMouseClicked
+
+    private void ventiBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ventiBtnMouseClicked
+        checkCurrentNull();
+        current.setSize(ventiBtn.getText().toUpperCase());
+        updateText();
+    }//GEN-LAST:event_ventiBtnMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

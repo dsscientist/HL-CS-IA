@@ -22,7 +22,7 @@
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="eggnogBtn" min="-2" pref="155" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="dairyButton" min="-2" pref="155" max="-2" attributes="0"/>
+                      <Component id="dairyBtn" min="-2" pref="155" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="halfNHalfBtn" min="-2" pref="155" max="-2" attributes="0"/>
@@ -167,7 +167,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="eggnogBtn" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
-                  <Component id="dairyButton" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                  <Component id="dairyBtn" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
           </Group>
@@ -199,6 +199,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="1% Milk"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="onePMilkBtnMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="twoPMilkBtn">
       <Properties>
@@ -210,6 +213,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="2% Milk"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="twoPMilkBtnMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="wholeMilkBtn">
       <Properties>
@@ -221,6 +227,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Whole Milk"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="wholeMilkBtnMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="soyMilkBtn">
       <Properties>
@@ -232,6 +241,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Soy Milk"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="soyMilkBtnMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="lactaidMilkBtn">
       <Properties>
@@ -243,6 +255,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Lactaid Milk"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lactaidMilkBtnMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="coconutMilkBtn">
       <Properties>
@@ -254,6 +269,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Coconut Milk"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="coconutMilkBtnMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="almondMilkBtn">
       <Properties>
@@ -265,6 +283,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Almond Milk"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="almondMilkBtnMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="halfNHalfBtn">
       <Properties>
@@ -276,6 +297,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Half &amp; Half (Breve)"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="halfNHalfBtnMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="heavyCreamBtn">
       <Properties>
@@ -287,6 +311,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Heavy Cream"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="heavyCreamBtnMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="eggnogBtn">
       <Properties>
@@ -298,8 +325,11 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Eggnog"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="eggnogBtnMouseClicked"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="dairyButton">
+    <Component class="javax.swing.JButton" name="dairyBtn">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -309,6 +339,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Add Dairy"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="dairyBtnMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="withAlmondBtn">
       <Properties>

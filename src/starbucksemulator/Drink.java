@@ -5,18 +5,24 @@ import java.util.Set;
 
 
 public class Drink extends Item {
-    private Size size;
-    private String milk;
+    private Size size = Size.GRANDE;
+    private String milk = "2% MILK";
     private boolean isIced;
     private Espresso espresso;
     private Set<String> custom = new HashSet<String>();
     
     public Drink(String s, double d) {
         super(s, d);
+        espresso = new Espresso(this);
     }
     
     public Drink() {
-        
+        super("", 0.0);
+        espresso = new Espresso(this);
+    }
+    
+    public Espresso getEspresso() {
+        return espresso;
     }
     
     public void setSize(String s) {
@@ -37,7 +43,11 @@ public class Drink extends Item {
         if (isIced) {
             s += "Iced ";
         }
-        s += name;
+        if (name.equals("")) {
+            s += String.format("[%s] drink\n", size);
+        } else {
+            s += String.format("%s %s\n", size, name);
+        }
         s += espresso + "\n";
         if (!milk.equalsIgnoreCase("2% milk")) {
             s += milk + "\n";

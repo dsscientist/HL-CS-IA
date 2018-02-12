@@ -8,15 +8,17 @@ import java.sql.*;
  */
 public class StarbucksEmulator {
 
-    public static Order order = new Order();    
+    public static Order order = new Order();
+    public static Statement stmt;
+    public static DataMover dm = new DataMover();
     
     public static void main(String[] args) throws ClassNotFoundException, SQLException, InterruptedException {
         Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
         Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/starbucksDB;create=true"
                 ,"dsscientist","ilovemom100%"); //don't worry, fake useless passsword
-        Statement stmt = con.createStatement();
-        DataMover dm = new DataMover();
-        /*NumberKeyPopup nkp = new NumberKeyPopup("LOGON", stmt, order, dm);
+        stmt = con.createStatement();
+        dm = new DataMover();
+        /*NumberKeyPopup nkp = new NumberKeyPopup("LOGON", stmt);
         nkp.setVisible(true);
         dm.guardDone();
         System.out.println(dm.getInt());*/

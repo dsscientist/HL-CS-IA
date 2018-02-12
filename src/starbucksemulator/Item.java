@@ -5,10 +5,7 @@ public abstract class Item {
     protected String name;
     protected double price;
     
-    public Item() {
-        
-    }
-    
+   
     public Item(String s, double d) {
         setName(s);
         setPrice(d);
