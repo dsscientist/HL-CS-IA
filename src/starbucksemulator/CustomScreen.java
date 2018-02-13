@@ -11,13 +11,36 @@ package starbucksemulator;
  */
 public class CustomScreen extends javax.swing.JPanel {
 
-    /**
-     * Creates new form CustomScreen
-     */
+    private javax.swing.JButton[] buttons = new javax.swing.JButton[12];
+    private Drink current;
+    
     public CustomScreen() {
         initComponents();
+        addButtons();
+        roundButtons();
     }
 
+    private void addButtons() {
+        buttons[0] = extraBtn;
+        buttons[1] = extraHotBtn;
+        buttons[2] = foamBtn;
+        buttons[3] = iceBtn;
+        buttons[4] = lightBtn;
+        buttons[5] = noBtn;
+        buttons[6] = roomBtn;
+        buttons[7] = subBtn;
+        buttons[8] = temperatureBtn;
+        buttons[9] = warmBtn;
+        buttons[10] = waterBtn;
+        buttons[11] = whipBtn;
+    }
+    
+    private void roundButtons() {
+        for (javax.swing.JButton b : buttons) {
+            b.setBorder(new RoundedBorder(10));
+        }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -29,6 +52,18 @@ public class CustomScreen extends javax.swing.JPanel {
 
         jDialog1 = new javax.swing.JDialog();
         jDialog2 = new javax.swing.JDialog();
+        roomBtn = new javax.swing.JButton();
+        iceBtn = new javax.swing.JButton();
+        noBtn = new javax.swing.JButton();
+        subBtn = new javax.swing.JButton();
+        whipBtn = new javax.swing.JButton();
+        foamBtn = new javax.swing.JButton();
+        extraBtn = new javax.swing.JButton();
+        lightBtn = new javax.swing.JButton();
+        waterBtn = new javax.swing.JButton();
+        temperatureBtn = new javax.swing.JButton();
+        extraHotBtn = new javax.swing.JButton();
+        warmBtn = new javax.swing.JButton();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
@@ -52,21 +87,265 @@ public class CustomScreen extends javax.swing.JPanel {
             .addGap(0, 300, Short.MAX_VALUE)
         );
 
+        roomBtn.setBackground(new java.awt.Color(204, 204, 204));
+        roomBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        roomBtn.setText("With Room");
+        roomBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                roomBtnMouseClicked(evt);
+            }
+        });
+
+        iceBtn.setBackground(new java.awt.Color(204, 255, 255));
+        iceBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        iceBtn.setText("Ice");
+        iceBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                iceBtnMouseClicked(evt);
+            }
+        });
+
+        noBtn.setBackground(new java.awt.Color(0, 0, 0));
+        noBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        noBtn.setForeground(new java.awt.Color(255, 255, 255));
+        noBtn.setText("No");
+        noBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                noBtnMouseClicked(evt);
+            }
+        });
+
+        subBtn.setBackground(new java.awt.Color(0, 0, 0));
+        subBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        subBtn.setForeground(new java.awt.Color(255, 255, 255));
+        subBtn.setText("Sub");
+        subBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                subBtnMouseClicked(evt);
+            }
+        });
+
+        whipBtn.setBackground(new java.awt.Color(204, 255, 255));
+        whipBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        whipBtn.setText("Whipped Cream");
+        whipBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                whipBtnMouseClicked(evt);
+            }
+        });
+
+        foamBtn.setBackground(new java.awt.Color(204, 204, 204));
+        foamBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        foamBtn.setText("Foam");
+        foamBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                foamBtnMouseClicked(evt);
+            }
+        });
+
+        extraBtn.setBackground(new java.awt.Color(0, 0, 0));
+        extraBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        extraBtn.setForeground(new java.awt.Color(255, 255, 255));
+        extraBtn.setText("Extra");
+        extraBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                extraBtnMouseClicked(evt);
+            }
+        });
+
+        lightBtn.setBackground(new java.awt.Color(0, 0, 0));
+        lightBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        lightBtn.setForeground(new java.awt.Color(255, 255, 255));
+        lightBtn.setText("Light");
+        lightBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lightBtnMouseClicked(evt);
+            }
+        });
+
+        waterBtn.setBackground(new java.awt.Color(204, 255, 255));
+        waterBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        waterBtn.setText("Water");
+        waterBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                waterBtnMouseClicked(evt);
+            }
+        });
+
+        temperatureBtn.setBackground(new java.awt.Color(255, 255, 204));
+        temperatureBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        temperatureBtn.setText("Temperature");
+        temperatureBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                temperatureBtnMouseClicked(evt);
+            }
+        });
+
+        extraHotBtn.setBackground(new java.awt.Color(255, 255, 204));
+        extraHotBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        extraHotBtn.setText("Extra Hot");
+        extraHotBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                extraHotBtnMouseClicked(evt);
+            }
+        });
+
+        warmBtn.setBackground(new java.awt.Color(255, 255, 204));
+        warmBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        warmBtn.setText("Warm");
+        warmBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                warmBtnMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1024, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(noBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(iceBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(128, 128, 128)
+                                .addComponent(subBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 128, Short.MAX_VALUE)
+                                .addComponent(extraBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(128, 128, 128)
+                                .addComponent(lightBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap())
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(waterBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(whipBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(extraHotBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(warmBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(temperatureBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(foamBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(roomBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {iceBtn, whipBtn});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(noBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(subBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(iceBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(whipBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(waterBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(extraBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lightBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 330, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(foamBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(roomBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(extraHotBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(warmBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(temperatureBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void checkCurrentNull() {
+        if (StarbucksEmulator.order.current() == null) {
+            StarbucksEmulator.order.addItem(new Drink());
+        }
+        current = (Drink)StarbucksEmulator.order.current();
+    }
+    
+    private void updateText() {
+        ((EmulatorPanel)this.getParent().getParent()).updateText(current.toString());
+    }
+    
+    private void noBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_noBtnMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_noBtnMouseClicked
+
+    private void subBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_subBtnMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_subBtnMouseClicked
+
+    private void extraBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_extraBtnMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_extraBtnMouseClicked
+
+    private void lightBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lightBtnMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lightBtnMouseClicked
+
+    private void iceBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iceBtnMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_iceBtnMouseClicked
+
+    private void waterBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_waterBtnMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_waterBtnMouseClicked
+
+    private void whipBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_whipBtnMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_whipBtnMouseClicked
+
+    private void foamBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_foamBtnMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_foamBtnMouseClicked
+
+    private void roomBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roomBtnMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_roomBtnMouseClicked
+
+    private void extraHotBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_extraHotBtnMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_extraHotBtnMouseClicked
+
+    private void warmBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_warmBtnMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_warmBtnMouseClicked
+
+    private void temperatureBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_temperatureBtnMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_temperatureBtnMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton extraBtn;
+    private javax.swing.JButton extraHotBtn;
+    private javax.swing.JButton foamBtn;
+    private javax.swing.JButton iceBtn;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JDialog jDialog2;
+    private javax.swing.JButton lightBtn;
+    private javax.swing.JButton noBtn;
+    private javax.swing.JButton roomBtn;
+    private javax.swing.JButton subBtn;
+    private javax.swing.JButton temperatureBtn;
+    private javax.swing.JButton warmBtn;
+    private javax.swing.JButton waterBtn;
+    private javax.swing.JButton whipBtn;
     // End of variables declaration//GEN-END:variables
 }

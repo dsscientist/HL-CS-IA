@@ -27,6 +27,7 @@ public class Order {
     @Override
     public String toString() {
         String s = "";
+        s += name + "\n";
         for (Item i: items) {
             s += i + "\n";
         }

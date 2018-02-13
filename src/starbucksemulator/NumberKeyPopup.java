@@ -317,12 +317,12 @@ public class NumberKeyPopup extends javax.swing.JFrame {
                 if (rs.next()) {
                     if (i == rs.getInt("Pin")) {
                         System.out.println("yay");
+                        dm.setInt(i);
+                        dm.notifyDone();
                     }
                 } else {
                     displayLabel.setText("");
                 }
-                dm.setInt(i);
-                dm.notifyDone();
             } catch (SQLException ex) {
                 Logger.getLogger(NumberKeyPopup.class.getName()).log(Level.SEVERE, null, ex);
             }

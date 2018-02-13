@@ -46,16 +46,18 @@ public class Espresso {
         if (isDecaf) {
             s += "  Decaf\n";
         }
-        if (shotNum < SHOT_NAME.length) {
+        if (shotNum <= SHOT_NAME.length) {
             if (shotNum != 0) {
-                s += String.format("  %s\n", SHOT_NAME[shotNum - 1]);
-            }
-            try {
-                ResultSet rs = StarbucksEmulator.stmt.executeQuery("SELECT NUMSHOTS FROM RECIPEKEY WHERE SIZE=''");
-                rs.next();
-                int shots = rs.getInt("NUMSHOTS");
-            } catch (SQLException ex) {
-                Logger.getLogger(Espresso.class.getName()).log(Level.SEVERE, null, ex);
+                try {
+                    ResultSet rs = StarbucksEmulator.stmt.executeQuery(String.format("SELECT NUMSHOTS FROM RECIPEKEY WHERE SIZE='%s'",parent.getSize()));
+                    rs.next();
+                    int shots = rs.getInt("NUMSHOTS");
+                    if (shots != shotNum) {
+                        s += String.format("  %s\n", SHOT_NAME[shotNum - 1]);
+                    }
+                } catch (SQLException ex) {
+                    Logger.getLogger(Espresso.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         } else {
             s += String.format("  %d Shots", shotNum);

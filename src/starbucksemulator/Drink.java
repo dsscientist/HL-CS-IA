@@ -1,7 +1,11 @@
 package starbucksemulator;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class Drink extends Item {
@@ -25,8 +29,23 @@ public class Drink extends Item {
         return espresso;
     }
     
+    public Size getSize() {
+        return size;
+    }
+    
+    public void addCustom(String s) {
+        custom.add(s);
+    }
+    
     public void setSize(String s) {
         size = Size.valueOf(s);
+        try {
+            ResultSet rs = StarbucksEmulator.stmt.executeQuery(String.format("SELECT NUMSHOTS FROM RECIPEKEY WHERE SIZE='%s'", size));
+            rs.next();
+            espresso.setShots(rs.getInt("NUMSHOTS"));
+        } catch (SQLException ex) {
+            Logger.getLogger(Espresso.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     public void setMilk(String s) {
@@ -44,7 +63,7 @@ public class Drink extends Item {
             s += "Iced ";
         }
         if (name.equals("")) {
-            s += String.format("[%s] drink\n", size);
+            s += String.format("%s [drink]\n", size);
         } else {
             s += String.format("%s %s\n", size, name);
         }

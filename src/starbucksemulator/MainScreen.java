@@ -297,8 +297,8 @@ public class MainScreen extends javax.swing.JPanel {
     private void checkCurrentNull() {
         if (StarbucksEmulator.order.current() == null) {
             StarbucksEmulator.order.addItem(new Drink());
-            current = (Drink)StarbucksEmulator.order.current();
         }
+        current = (Drink)StarbucksEmulator.order.current();
     }
     
     private void updateText() {
@@ -363,6 +363,7 @@ public class MainScreen extends javax.swing.JPanel {
         NumberKeyPopup nkp = new NumberKeyPopup("QUANTITY", StarbucksEmulator.stmt, dm);
         nkp.setVisible(true);
         dm.guardDone();
+        nkp.dispose();
         current.getEspresso().setShots(dm.getInt());
         updateText();
     }//GEN-LAST:event_moreShotsBtnMouseClicked

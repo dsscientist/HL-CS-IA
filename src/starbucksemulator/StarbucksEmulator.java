@@ -18,9 +18,10 @@ public class StarbucksEmulator {
                 ,"dsscientist","ilovemom100%"); //don't worry, fake useless passsword
         stmt = con.createStatement();
         dm = new DataMover();
-        /*NumberKeyPopup nkp = new NumberKeyPopup("LOGON", stmt);
+        /*NumberKeyPopup nkp = new NumberKeyPopup("LOGON", stmt, dm);
         nkp.setVisible(true);
         dm.guardDone();
+        nkp.dispose();
         System.out.println(dm.getInt());*/
         ResultSet rs = stmt.executeQuery("SELECT * FROM PartnerInfo");
         while (rs.next()) {

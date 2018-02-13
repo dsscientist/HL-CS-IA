@@ -390,6 +390,7 @@ public class MilkScreen extends javax.swing.JPanel {
             StarbucksEmulator.order.addItem(new Drink());
             current = (Drink)StarbucksEmulator.order.current();
         }
+        current = (Drink)StarbucksEmulator.order.current();
     }
     
     private void updateText() {
