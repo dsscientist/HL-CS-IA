@@ -13,6 +13,7 @@ public class CustomScreen extends javax.swing.JPanel {
 
     private javax.swing.JButton[] buttons = new javax.swing.JButton[12];
     private Drink current;
+    private String mutator = "add "; //default
     
     public CustomScreen() {
         initComponents();
@@ -259,7 +260,7 @@ public class CustomScreen extends javax.swing.JPanel {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(extraBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(lightBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 330, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 291, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(foamBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(roomBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -284,51 +285,77 @@ public class CustomScreen extends javax.swing.JPanel {
     }
     
     private void noBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_noBtnMouseClicked
-        // TODO add your handling code here:
+        mutator = "no ";
     }//GEN-LAST:event_noBtnMouseClicked
 
     private void subBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_subBtnMouseClicked
-        // TODO add your handling code here:
+        mutator = "sub ";
     }//GEN-LAST:event_subBtnMouseClicked
 
     private void extraBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_extraBtnMouseClicked
-        // TODO add your handling code here:
+        mutator = "extra ";
     }//GEN-LAST:event_extraBtnMouseClicked
 
     private void lightBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lightBtnMouseClicked
-        // TODO add your handling code here:
+        mutator = "light ";
     }//GEN-LAST:event_lightBtnMouseClicked
 
     private void iceBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iceBtnMouseClicked
-        // TODO add your handling code here:
+        checkCurrentNull();
+        current.addCustom(String.format("%sice", mutator));
+        updateText();
+        mutator = "add ";
     }//GEN-LAST:event_iceBtnMouseClicked
 
     private void waterBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_waterBtnMouseClicked
-        // TODO add your handling code here:
+        checkCurrentNull();
+        current.addCustom(String.format("%swater", mutator));
+        updateText();
+        mutator = "add ";
     }//GEN-LAST:event_waterBtnMouseClicked
 
     private void whipBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_whipBtnMouseClicked
-        // TODO add your handling code here:
+        checkCurrentNull();
+        current.addCustom(String.format("%swhip", mutator));
+        updateText();
+        mutator = "add ";
     }//GEN-LAST:event_whipBtnMouseClicked
 
     private void foamBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_foamBtnMouseClicked
-        // TODO add your handling code here:
+        checkCurrentNull();
+        current.addCustom(String.format("%sfoam", mutator));
+        updateText();
+        mutator = "add ";
     }//GEN-LAST:event_foamBtnMouseClicked
 
     private void roomBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roomBtnMouseClicked
-        // TODO add your handling code here:
+        checkCurrentNull();
+        current.addCustom(String.format("%sroom", mutator));
+        updateText();
+        mutator = "add ";
     }//GEN-LAST:event_roomBtnMouseClicked
 
     private void extraHotBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_extraHotBtnMouseClicked
-        // TODO add your handling code here:
+        checkCurrentNull();
+        current.addCustom("extra hot");
+        updateText();
     }//GEN-LAST:event_extraHotBtnMouseClicked
 
     private void warmBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_warmBtnMouseClicked
-        // TODO add your handling code here:
+        checkCurrentNull();
+        current.addCustom("warm");
+        updateText();
     }//GEN-LAST:event_warmBtnMouseClicked
 
     private void temperatureBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_temperatureBtnMouseClicked
-        // TODO add your handling code here:
+        checkCurrentNull();
+        DataMover dm = StarbucksEmulator.dm;
+        NumberKeyPopup nkp = new NumberKeyPopup("TEMPERATURE", StarbucksEmulator.stmt, dm);
+        nkp.setVisible(true);
+        dm.guardDone();
+        nkp.dispose();
+        current.addCustom(String.format("%d degrees", dm.getInt()));
+        updateText();
     }//GEN-LAST:event_temperatureBtnMouseClicked
 
 

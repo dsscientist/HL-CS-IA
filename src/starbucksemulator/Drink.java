@@ -10,6 +10,7 @@ import java.util.logging.Logger;
 
 public class Drink extends Item {
     private Size size = Size.GRANDE;
+    private String dName = "";
     private String milk = "2% MILK";
     private boolean isIced;
     private Espresso espresso;
@@ -58,18 +59,18 @@ public class Drink extends Item {
     
     @Override
     public String toString() {
-        String s = "";
+        String s = name;
         if (isIced) {
             s += "Iced ";
         }
-        if (name.equals("")) {
+        if (dName.equals("")) {
             s += String.format("%s [drink]\n", size);
         } else {
-            s += String.format("%s %s\n", size, name);
+            s += String.format("%s %s\n", size, dName);
         }
-        s += espresso + "\n";
+        s += espresso;
         if (!milk.equalsIgnoreCase("2% milk")) {
-            s += milk + "\n";
+            s += "  " + milk + "\n";
         }
         s += makeString(custom);
         return s;

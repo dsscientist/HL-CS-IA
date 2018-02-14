@@ -60,7 +60,7 @@ public class Espresso {
                 }
             }
         } else {
-            s += String.format("  %d Shots", shotNum);
+            s += String.format("  %d Shots\n", shotNum);
         }
         if (isRistretto) {
             s += "  Ristretto";

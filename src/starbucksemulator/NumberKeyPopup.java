@@ -327,7 +327,8 @@ public class NumberKeyPopup extends javax.swing.JFrame {
                 Logger.getLogger(NumberKeyPopup.class.getName()).log(Level.SEVERE, null, ex);
             }
         } else {
-            
+            dm.setInt(Integer.parseInt(displayLabel.getText()));
+            dm.notifyDone();
         }
     }//GEN-LAST:event_okayButtonMouseClicked
 

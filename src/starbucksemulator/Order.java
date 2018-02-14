@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Order {
     private List<Item> items = new ArrayList<Item>();
-    private String name = "[name]";
+    String name = "[name]";
     
     public Order() {
     }

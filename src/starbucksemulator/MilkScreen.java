@@ -13,6 +13,7 @@ public class MilkScreen extends javax.swing.JPanel {
     private javax.swing.JButton[] buttons = new javax.swing.JButton[24];
     private Statement stmt;
     private Drink current;
+    private String mutator = ""; //for 'extra' and 'light'
     
     public MilkScreen(Statement s) {
         initComponents();
@@ -210,14 +211,29 @@ public class MilkScreen extends javax.swing.JPanel {
         withAlmondBtn.setBackground(new java.awt.Color(255, 255, 204));
         withAlmondBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
         withAlmondBtn.setText(" WithAlmond Milk");
+        withAlmondBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                withAlmondBtnMouseClicked(evt);
+            }
+        });
 
         withHalfNHalfBtn.setBackground(new java.awt.Color(204, 204, 255));
         withHalfNHalfBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
         withHalfNHalfBtn.setText("With Half & Half (Breve)");
+        withHalfNHalfBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                withHalfNHalfBtnMouseClicked(evt);
+            }
+        });
 
         withHeavyCreamBtn.setBackground(new java.awt.Color(204, 204, 255));
         withHeavyCreamBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
         withHeavyCreamBtn.setText("With Heavy Cream");
+        withHeavyCreamBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                withHeavyCreamBtnMouseClicked(evt);
+            }
+        });
         withHeavyCreamBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 withHeavyCreamBtnActionPerformed(evt);
@@ -228,39 +244,84 @@ public class MilkScreen extends javax.swing.JPanel {
         extraBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
         extraBtn.setForeground(new java.awt.Color(255, 255, 255));
         extraBtn.setText("Extra");
+        extraBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                extraBtnMouseClicked(evt);
+            }
+        });
 
         lightBtn.setBackground(new java.awt.Color(0, 0, 0));
         lightBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
         lightBtn.setForeground(new java.awt.Color(255, 255, 255));
         lightBtn.setText("Light");
+        lightBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lightBtnMouseClicked(evt);
+            }
+        });
 
         with2PBtn.setBackground(new java.awt.Color(204, 255, 255));
         with2PBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
         with2PBtn.setText("With 2% Milk");
+        with2PBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                with2PBtnMouseClicked(evt);
+            }
+        });
 
         withWholeBtn.setBackground(new java.awt.Color(204, 255, 255));
         withWholeBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
         withWholeBtn.setText("With Whole Milk");
+        withWholeBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                withWholeBtnMouseClicked(evt);
+            }
+        });
 
         withSoyBtn.setBackground(new java.awt.Color(255, 255, 204));
         withSoyBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
         withSoyBtn.setText("With Soy Milk");
+        withSoyBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                withSoyBtnMouseClicked(evt);
+            }
+        });
 
         withLactaidBtn.setBackground(new java.awt.Color(255, 255, 204));
         withLactaidBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
         withLactaidBtn.setText("With Lactaid Milk");
+        withLactaidBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                withLactaidBtnMouseClicked(evt);
+            }
+        });
 
         withCoconutBtn.setBackground(new java.awt.Color(255, 255, 204));
         withCoconutBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
         withCoconutBtn.setText("With Coconut Milk");
+        withCoconutBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                withCoconutBtnMouseClicked(evt);
+            }
+        });
 
         withNonfatBtn.setBackground(new java.awt.Color(204, 255, 255));
         withNonfatBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
         withNonfatBtn.setText("With Nonfat Milk");
+        withNonfatBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                withNonfatBtnMouseClicked(evt);
+            }
+        });
 
         with1PBtn.setBackground(new java.awt.Color(204, 255, 255));
         with1PBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
         with1PBtn.setText("With 1% Milk");
+        with1PBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                with1PBtnMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -472,6 +533,84 @@ public class MilkScreen extends javax.swing.JPanel {
         current.setMilk(dairyBtn.getText());
         updateText();
     }//GEN-LAST:event_dairyBtnMouseClicked
+
+    private void withNonfatBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_withNonfatBtnMouseClicked
+        checkCurrentNull();
+        current.addCustom(String.format("w/ %snonfat milk", mutator));
+        updateText();
+        mutator = "";
+    }//GEN-LAST:event_withNonfatBtnMouseClicked
+
+    private void with1PBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_with1PBtnMouseClicked
+        checkCurrentNull();
+        current.addCustom(String.format("w/ %s1 percent milk", mutator));
+        updateText();
+        mutator = "";
+    }//GEN-LAST:event_with1PBtnMouseClicked
+
+    private void with2PBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_with2PBtnMouseClicked
+        checkCurrentNull();
+        current.addCustom(String.format("w/ %s2 percent milk", mutator));
+        updateText();
+        mutator = "";
+    }//GEN-LAST:event_with2PBtnMouseClicked
+
+    private void withWholeBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_withWholeBtnMouseClicked
+        checkCurrentNull();
+        current.addCustom(String.format("w/ %swhole milk", mutator));
+        updateText();
+        mutator = "";
+    }//GEN-LAST:event_withWholeBtnMouseClicked
+
+    private void withSoyBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_withSoyBtnMouseClicked
+        checkCurrentNull();
+        current.addCustom(String.format("w/ %ssoy milk", mutator));
+        updateText();
+        mutator = "";
+    }//GEN-LAST:event_withSoyBtnMouseClicked
+
+    private void withLactaidBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_withLactaidBtnMouseClicked
+        checkCurrentNull();
+        current.addCustom(String.format("w/ %slactaid milk", mutator));
+        updateText();
+        mutator = "";
+    }//GEN-LAST:event_withLactaidBtnMouseClicked
+
+    private void withCoconutBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_withCoconutBtnMouseClicked
+        checkCurrentNull();
+        current.addCustom(String.format("w/ %scoconut milk", mutator));
+        updateText();
+        mutator = "";
+    }//GEN-LAST:event_withCoconutBtnMouseClicked
+
+    private void withAlmondBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_withAlmondBtnMouseClicked
+        checkCurrentNull();
+        current.addCustom(String.format("w/ %salmond milk", mutator));
+        updateText();
+        mutator = "";
+    }//GEN-LAST:event_withAlmondBtnMouseClicked
+
+    private void withHalfNHalfBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_withHalfNHalfBtnMouseClicked
+        checkCurrentNull();
+        current.addCustom(String.format("w/ %sbreve", mutator));
+        updateText();
+        mutator = "";
+    }//GEN-LAST:event_withHalfNHalfBtnMouseClicked
+
+    private void withHeavyCreamBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_withHeavyCreamBtnMouseClicked
+        checkCurrentNull();
+        current.addCustom(String.format("w/ %sheavy cream", mutator));
+        updateText();
+        mutator = "";
+    }//GEN-LAST:event_withHeavyCreamBtnMouseClicked
+
+    private void extraBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_extraBtnMouseClicked
+        mutator = "extra ";
+    }//GEN-LAST:event_extraBtnMouseClicked
+
+    private void lightBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lightBtnMouseClicked
+        mutator = "light ";
+    }//GEN-LAST:event_lightBtnMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

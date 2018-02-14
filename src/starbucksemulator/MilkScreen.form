@@ -353,6 +353,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value=" WithAlmond Milk"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="withAlmondBtnMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="withHalfNHalfBtn">
       <Properties>
@@ -364,6 +367,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="With Half &amp; Half (Breve)"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="withHalfNHalfBtnMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="withHeavyCreamBtn">
       <Properties>
@@ -376,6 +382,7 @@
         <Property name="text" type="java.lang.String" value="With Heavy Cream"/>
       </Properties>
       <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="withHeavyCreamBtnMouseClicked"/>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="withHeavyCreamBtnActionPerformed"/>
       </Events>
     </Component>
@@ -392,6 +399,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Extra"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="extraBtnMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="lightBtn">
       <Properties>
@@ -406,6 +416,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Light"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lightBtnMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="with2PBtn">
       <Properties>
@@ -417,6 +430,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="With 2% Milk"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="with2PBtnMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="withWholeBtn">
       <Properties>
@@ -428,6 +444,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="With Whole Milk"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="withWholeBtnMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="withSoyBtn">
       <Properties>
@@ -439,6 +458,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="With Soy Milk"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="withSoyBtnMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="withLactaidBtn">
       <Properties>
@@ -450,6 +472,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="With Lactaid Milk"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="withLactaidBtnMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="withCoconutBtn">
       <Properties>
@@ -461,6 +486,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="With Coconut Milk"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="withCoconutBtnMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="withNonfatBtn">
       <Properties>
@@ -472,6 +500,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="With Nonfat Milk"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="withNonfatBtnMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="with1PBtn">
       <Properties>
@@ -483,6 +514,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="With 1% Milk"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="with1PBtnMouseClicked"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
