@@ -19,7 +19,6 @@ public class MilkScreen extends javax.swing.JPanel {
         initComponents();
         stmt = s;
         addButtons();
-        addMouseListeners();
         roundButtons();
     }
     
@@ -48,16 +47,6 @@ public class MilkScreen extends javax.swing.JPanel {
         buttons[21] = withNonfatBtn;
         buttons[22] = withSoyBtn;
         buttons[23] = withWholeBtn;
-    }
-    
-    private void addMouseListeners() {
-        for (javax.swing.JButton b : buttons) {
-            b.addMouseListener(new java.awt.event.MouseAdapter() {
-                public void mouseClicked(java.awt.event.MouseEvent evt) {
-                    System.out.println("hi");
-                }
-            });
-        }
     }
     
     private void roundButtons() {

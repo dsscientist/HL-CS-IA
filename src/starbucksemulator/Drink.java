@@ -70,7 +70,7 @@ public class Drink extends Item {
         }
         s += espresso;
         if (!milk.equalsIgnoreCase("2% milk")) {
-            s += "  " + milk + "\n";
+            s += "    " + milk + "\n";
         }
         s += makeString(custom);
         return s;
@@ -79,7 +79,7 @@ public class Drink extends Item {
     private String makeString(Set<String> custom) {
         String s = "";
         for (String i : custom) {
-            s += String.format("  %s\n", i);
+            s += String.format("    %s\n", i);
         }
         return s;
     }

@@ -21,13 +21,6 @@ public class StarbucksEmulator {
         nkp.setVisible(true);
         dm.guardDone();
         nkp.dispose();
-        System.out.println(dm.getInt());
-        ResultSet rs = stmt.executeQuery("SELECT * FROM PartnerInfo");
-        while (rs.next()) {
-            String s = rs.getString("PartnerNumber");
-            int i = rs.getInt("Pin");
-            System.out.println(s + " " + i);
-        }
         MainInterface mi = new MainInterface(stmt);
         mi.setVisible(true);
     }

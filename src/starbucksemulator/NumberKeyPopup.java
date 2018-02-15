@@ -316,9 +316,10 @@ public class NumberKeyPopup extends javax.swing.JFrame {
                 String s;
                 if (rs.next()) {
                     if (i == rs.getInt("Pin")) {
-                        System.out.println("yay");
                         dm.setInt(i);
                         dm.notifyDone();
+                    } else {
+                        displayLabel.setText("");
                     }
                 } else {
                     displayLabel.setText("");
