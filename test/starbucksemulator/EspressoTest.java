@@ -47,7 +47,6 @@ public class EspressoTest {
         Espresso instance = null;
         instance.setShots(i);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -59,7 +58,6 @@ public class EspressoTest {
         Espresso instance = null;
         instance.setDecaf();
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -72,7 +70,6 @@ public class EspressoTest {
         Espresso instance = null;
         instance.setRoast(r);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -81,10 +78,9 @@ public class EspressoTest {
     @Test
     public void testSetRistretto() {
         System.out.println("setRistretto");
-        Espresso instance = null;
+        Espresso instance = new Espresso(null);
         instance.setRistretto();
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -93,12 +89,11 @@ public class EspressoTest {
     @Test
     public void testGetShotNum() {
         System.out.println("getShotNum");
-        Espresso instance = null;
-        int expResult = 0;
+        Espresso instance = new Espresso(null);
+        int expResult = 2;
         int result = instance.getShotNum();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -112,7 +107,6 @@ public class EspressoTest {
         String result = instance.toString();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }
