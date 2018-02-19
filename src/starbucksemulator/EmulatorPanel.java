@@ -5,7 +5,6 @@
  */
 package starbucksemulator;
 
-import com.sun.prism.paint.Color;
 import java.awt.FontMetrics;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;

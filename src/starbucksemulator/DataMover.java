@@ -1,7 +1,7 @@
 package starbucksemulator;
 
 
-public class DataMover {
+public class DataMover { //allows me to stop thread until data is received (like dialog would)
     private int i;
     private String s;
     private Item item;
@@ -36,6 +36,7 @@ public class DataMover {
     }
     
     public synchronized void guardDone() {
+        done = false;
         while (!done) {
             try {
                 wait();

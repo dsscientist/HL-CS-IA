@@ -21,7 +21,7 @@ public class StarbucksEmulator {
         nkp.setVisible(true);
         dm.guardDone();
         nkp.dispose();
-        MainInterface mi = new MainInterface(stmt);
+        MainInterface mi = new MainInterface(stmt, order);
         mi.setVisible(true);
     }
     

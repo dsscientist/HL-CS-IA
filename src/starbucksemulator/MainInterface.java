@@ -22,8 +22,9 @@ public class MainInterface extends javax.swing.JFrame {
     
     */
     
-    public MainInterface(Statement s) {
+    public MainInterface(Statement s, Order o) {
         initComponents();
+        order = o;
         stmt = s;
         this.setTitle("Starbucks Emulator");
         this.setResizable(false);
@@ -102,7 +103,7 @@ public class MainInterface extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MainInterface(stmt).setVisible(true);
+                new MainInterface(stmt, order).setVisible(true);
             }
         });
     }
