@@ -13,13 +13,35 @@ import java.awt.Color;
  */
 public class SyrupScreen extends javax.swing.JPanel {
 
-    /**
-     * Creates new form SyrupScreen
-     */
+    private javax.swing.JButton[] buttons = new javax.swing.JButton[10];
+    private Drink current;
+    private String mutator = "add "; //default
+    private String syrup = "";
+    
     public SyrupScreen() {
         initComponents();
+        addButtons();
+        roundButtons();
     }
 
+    private void addButtons() {
+        buttons[0] = caramelBtn;
+        buttons[1] = extraBtn;
+        buttons[2] = hazelnutBtn;
+        buttons[3] = lightBtn;
+        buttons[4] = mochaBtn;
+        buttons[5] = noBtn;
+        buttons[6] = peppermintBtn;
+        buttons[7] = pumpBtn;
+        buttons[8] = subBtn;
+        buttons[9] = vanillaBtn;
+    }
+    
+    private void roundButtons() {
+        for (javax.swing.JButton b : buttons) {
+            b.setBorder(new RoundedBorder(10));
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -29,32 +51,249 @@ public class SyrupScreen extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        mochaBtn = new javax.swing.JButton();
+        pumpBtn = new javax.swing.JButton();
+        caramelBtn = new javax.swing.JButton();
+        subBtn = new javax.swing.JButton();
+        noBtn = new javax.swing.JButton();
+        lightBtn = new javax.swing.JButton();
+        extraBtn = new javax.swing.JButton();
+        peppermintBtn = new javax.swing.JButton();
+        hazelnutBtn = new javax.swing.JButton();
+        vanillaBtn = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(1024, 600));
 
-        jLabel1.setText("Smile!");
+        mochaBtn.setBackground(new java.awt.Color(204, 204, 204));
+        mochaBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        mochaBtn.setText("Mocha Sauce");
+        mochaBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mochaBtnMouseClicked(evt);
+            }
+        });
+
+        pumpBtn.setBackground(new java.awt.Color(255, 255, 204));
+        pumpBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        pumpBtn.setText("Pumps");
+        pumpBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pumpBtnMouseClicked(evt);
+            }
+        });
+
+        caramelBtn.setBackground(new java.awt.Color(204, 255, 255));
+        caramelBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        caramelBtn.setText("Caramel Syrup");
+        caramelBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                caramelBtnMouseClicked(evt);
+            }
+        });
+
+        subBtn.setBackground(new java.awt.Color(0, 0, 0));
+        subBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        subBtn.setForeground(new java.awt.Color(255, 255, 255));
+        subBtn.setText("Sub");
+        subBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                subBtnMouseClicked(evt);
+            }
+        });
+
+        noBtn.setBackground(new java.awt.Color(0, 0, 0));
+        noBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        noBtn.setForeground(new java.awt.Color(255, 255, 255));
+        noBtn.setText("No");
+        noBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                noBtnMouseClicked(evt);
+            }
+        });
+
+        lightBtn.setBackground(new java.awt.Color(0, 0, 0));
+        lightBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        lightBtn.setForeground(new java.awt.Color(255, 255, 255));
+        lightBtn.setText("Light");
+        lightBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lightBtnMouseClicked(evt);
+            }
+        });
+
+        extraBtn.setBackground(new java.awt.Color(0, 0, 0));
+        extraBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        extraBtn.setForeground(new java.awt.Color(255, 255, 255));
+        extraBtn.setText("Extra");
+        extraBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                extraBtnMouseClicked(evt);
+            }
+        });
+
+        peppermintBtn.setBackground(new java.awt.Color(255, 255, 204));
+        peppermintBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        peppermintBtn.setText("Peppermint Syrup");
+        peppermintBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                peppermintBtnMouseClicked(evt);
+            }
+        });
+
+        hazelnutBtn.setBackground(new java.awt.Color(204, 255, 255));
+        hazelnutBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        hazelnutBtn.setText("Hazelnut Syrup");
+        hazelnutBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                hazelnutBtnMouseClicked(evt);
+            }
+        });
+
+        vanillaBtn.setBackground(new java.awt.Color(204, 255, 255));
+        vanillaBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        vanillaBtn.setText("Vanilla Syrup");
+        vanillaBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                vanillaBtnMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(491, 491, 491)
-                .addComponent(jLabel1)
-                .addContainerGap(505, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(noBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(caramelBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(mochaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(57, 57, 57)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(subBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(peppermintBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(pumpBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(57, 57, 57)
+                        .addComponent(extraBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(58, 58, 58)
+                        .addComponent(lightBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(hazelnutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(vanillaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(575, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(noBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(subBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(extraBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lightBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pumpBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(caramelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(252, 252, 252)
+                        .addComponent(mochaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(78, 78, 78)
+                        .addComponent(peppermintBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(hazelnutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(vanillaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(139, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void checkCurrentNull() {
+        if (StarbucksEmulator.order.current() == null) {
+            StarbucksEmulator.order.addItem(new Drink());
+        }
+        current = (Drink)StarbucksEmulator.order.current();
+    }
+    
+    private void updateText() {
+        ((EmulatorPanel)this.getParent().getParent()).updateText(StarbucksEmulator.order.toString());
+    }
+    
+    private void checkDuplicate(String s) {
+        current.checkDuplicate(s);
+    }
+    
+    private void mochaBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mochaBtnMouseClicked
+        checkCurrentNull();
+        current.setMilk(mochaBtn.getText());
+        updateText();
+    }//GEN-LAST:event_mochaBtnMouseClicked
+
+    private void pumpBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pumpBtnMouseClicked
+        checkCurrentNull();
+        DataMover dm = StarbucksEmulator.dm;
+        Thread thread = new Thread() {
+            public void run() {
+                NumberKeyPopup nkp = new NumberKeyPopup("PUMPS", StarbucksEmulator.stmt, dm);
+                nkp.setVisible(true);
+                dm.guardDone();
+                nkp.dispose();
+                current.addCustom("do some stuff here");
+                updateText();
+            }
+        };
+        thread.start();
+    }//GEN-LAST:event_pumpBtnMouseClicked
+
+    private void caramelBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_caramelBtnMouseClicked
+        checkCurrentNull();
+        current.setMilk(caramelBtn.getText());
+        updateText();
+    }//GEN-LAST:event_caramelBtnMouseClicked
+
+    private void subBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_subBtnMouseClicked
+        mutator = "sub ";
+    }//GEN-LAST:event_subBtnMouseClicked
+
+    private void noBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_noBtnMouseClicked
+        mutator = "no ";
+    }//GEN-LAST:event_noBtnMouseClicked
+
+    private void lightBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lightBtnMouseClicked
+        mutator = "light ";
+    }//GEN-LAST:event_lightBtnMouseClicked
+
+    private void extraBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_extraBtnMouseClicked
+        mutator = "extra ";
+    }//GEN-LAST:event_extraBtnMouseClicked
+
+    private void peppermintBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_peppermintBtnMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_peppermintBtnMouseClicked
+
+    private void hazelnutBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hazelnutBtnMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_hazelnutBtnMouseClicked
+
+    private void vanillaBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vanillaBtnMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_vanillaBtnMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton caramelBtn;
+    private javax.swing.JButton extraBtn;
+    private javax.swing.JButton hazelnutBtn;
+    private javax.swing.JButton lightBtn;
+    private javax.swing.JButton mochaBtn;
+    private javax.swing.JButton noBtn;
+    private javax.swing.JButton peppermintBtn;
+    private javax.swing.JButton pumpBtn;
+    private javax.swing.JButton subBtn;
+    private javax.swing.JButton vanillaBtn;
     // End of variables declaration//GEN-END:variables
 }

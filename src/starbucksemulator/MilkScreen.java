@@ -444,7 +444,7 @@ public class MilkScreen extends javax.swing.JPanel {
     }
     
     private void updateText() {
-        ((EmulatorPanel)this.getParent().getParent()).updateText(current.toString());
+        ((EmulatorPanel)this.getParent().getParent()).updateText(StarbucksEmulator.order.toString());
     }
     
     private void withHeavyCreamBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_withHeavyCreamBtnActionPerformed

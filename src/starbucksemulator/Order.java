@@ -6,9 +6,17 @@ import java.util.List;
 
 public class Order {
     private List<Item> items = new ArrayList<Item>();
-    String name = "[name]";
+    String name = "[NAME]";
     
     public Order() {
+    }
+    
+    public double getCost() {
+        double total = 0;
+        for (Item i: items) {
+            total += i.price;
+        }
+        return total;
     }
     
     public void addItem(Item i) {

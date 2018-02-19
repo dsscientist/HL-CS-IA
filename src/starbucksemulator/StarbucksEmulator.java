@@ -17,10 +17,10 @@ public class StarbucksEmulator {
         Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/starbucksDB;create=true"
                 ,"dsscientist","ilovemom100%"); //don't worry, fake useless passsword
         stmt = con.createStatement();
-        NumberKeyPopup nkp = new NumberKeyPopup("LOGON", stmt, dm);
-        nkp.setVisible(true);
-        dm.guardDone();
-        nkp.dispose();
+        //NumberKeyPopup nkp = new NumberKeyPopup("LOGON", stmt, dm);
+        //nkp.setVisible(true);
+        //dm.guardDone();
+        //nkp.dispose();
         MainInterface mi = new MainInterface(stmt, order);
         mi.setVisible(true);
     }

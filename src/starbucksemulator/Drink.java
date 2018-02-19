@@ -3,6 +3,7 @@ package starbucksemulator;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -34,8 +35,25 @@ public class Drink extends Item {
         return size;
     }
     
+    public boolean checkDuplicate(String s) { //return value modelled after Collection class
+        Iterator<String> itr = custom.iterator();
+        while (itr.hasNext()) {
+            if (itr.next().contains(s)) {
+                itr.remove(); //since this checks each time, no more than one duplicate possible
+                return true;
+            }
+        }
+        return false;
+    }
+    
     public void addCustom(String s) {
         custom.add(s);
+    }
+    
+    public void removeCustom() {
+        if (custom.size() > 0) {
+            custom.remove(custom.size() - 1);
+        }
     }
     
     public void setSize(String s) {

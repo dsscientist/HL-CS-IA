@@ -281,7 +281,7 @@ public class CustomScreen extends javax.swing.JPanel {
     }
     
     private void updateText() {
-        ((EmulatorPanel)this.getParent().getParent()).updateText(current.toString());
+        ((EmulatorPanel)this.getParent().getParent()).updateText(StarbucksEmulator.order.toString());
     }
     
     private void noBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_noBtnMouseClicked
@@ -330,7 +330,10 @@ public class CustomScreen extends javax.swing.JPanel {
 
     private void roomBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roomBtnMouseClicked
         checkCurrentNull();
-        current.addCustom(String.format("%sroom", mutator));
+        if (mutator.equals("add ")) {
+            mutator = "";
+        }
+        current.addCustom(String.format("w/ %sroom", mutator));
         updateText();
         mutator = "add ";
     }//GEN-LAST:event_roomBtnMouseClicked

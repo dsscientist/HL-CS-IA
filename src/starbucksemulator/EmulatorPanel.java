@@ -54,10 +54,12 @@ public class EmulatorPanel extends javax.swing.JPanel {
         itemDisplay.setText("");
         itemDisplay.setLineWrap(true);
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        updateText(StarbucksEmulator.order.toString());
     }
     
     public void updateText(String s) {
         itemDisplay.setText(s);
+        priceLabel.setText(String.format("%.2f", StarbucksEmulator.order.getCost()));
     }
     
 
@@ -73,11 +75,32 @@ public class EmulatorPanel extends javax.swing.JPanel {
         labelTabs = new javax.swing.JTabbedPane();
         jScrollPane1 = new javax.swing.JScrollPane();
         itemDisplay = new javax.swing.JTextArea();
+        voidItemBtn = new javax.swing.JButton();
+        totalLabel = new javax.swing.JLabel();
+        priceLabel = new javax.swing.JLabel();
 
         itemDisplay.setColumns(20);
         itemDisplay.setFont(new java.awt.Font("Cambria", 0, 14)); // NOI18N
         itemDisplay.setRows(5);
         jScrollPane1.setViewportView(itemDisplay);
+
+        voidItemBtn.setBackground(new java.awt.Color(204, 255, 255));
+        voidItemBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        voidItemBtn.setText("Void Item");
+        voidItemBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                voidItemBtnMouseClicked(evt);
+            }
+        });
+
+        totalLabel.setFont(new java.awt.Font("Cambria", 0, 14)); // NOI18N
+        totalLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        totalLabel.setText("TOTAL");
+
+        priceLabel.setFont(new java.awt.Font("Cambria", 0, 14)); // NOI18N
+        priceLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        priceLabel.setText("[price]");
+        priceLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -85,7 +108,14 @@ public class EmulatorPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(voidItemBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+                            .addComponent(totalLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(priceLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(labelTabs, javax.swing.GroupLayout.PREFERRED_SIZE, 1124, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -96,15 +126,32 @@ public class EmulatorPanel extends javax.swing.JPanel {
                 .addGap(82, 82, 82)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(labelTabs, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(voidItemBtn)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(totalLabel)
+                            .addComponent(priceLabel))))
                 .addContainerGap(86, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void voidItemBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_voidItemBtnMouseClicked
+        Item i = StarbucksEmulator.order.current();
+        if (i != null && i instanceof Drink) {
+            ((Drink)i).removeCustom();
+        }
+    }//GEN-LAST:event_voidItemBtnMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea itemDisplay;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane labelTabs;
+    private javax.swing.JLabel priceLabel;
+    private javax.swing.JLabel totalLabel;
+    private javax.swing.JButton voidItemBtn;
     // End of variables declaration//GEN-END:variables
 }

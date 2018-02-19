@@ -5,6 +5,8 @@
  */
 package starbucksemulator;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 
 
@@ -302,7 +304,7 @@ public class MainScreen extends javax.swing.JPanel {
     }
     
     private void updateText() {
-        ((EmulatorPanel)this.getParent().getParent()).updateText(current.toString());
+        ((EmulatorPanel)this.getParent().getParent()).updateText(StarbucksEmulator.order.toString());
     }
     
     private void icedBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_icedBtnMouseClicked
@@ -360,12 +362,17 @@ public class MainScreen extends javax.swing.JPanel {
     private void moreShotsBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_moreShotsBtnMouseClicked
         checkCurrentNull();
         DataMover dm = StarbucksEmulator.dm;
-        NumberKeyPopup nkp = new NumberKeyPopup("QUANTITY", StarbucksEmulator.stmt, dm);
-        nkp.setVisible(true);
-        dm.guardDone();
-        nkp.dispose();
-        current.getEspresso().setShots(dm.getInt());
-        updateText();
+        Thread thread = new Thread() {
+            public void run() {
+                NumberKeyPopup nkp = new NumberKeyPopup("QUANTITY", StarbucksEmulator.stmt, dm);
+                nkp.setVisible(true);
+                dm.guardDone();
+                nkp.dispose();
+                current.getEspresso().setShots(dm.getInt());
+                updateText();
+            }
+        };
+        thread.start();
     }//GEN-LAST:event_moreShotsBtnMouseClicked
 
     private void ristrettoBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ristrettoBtnMouseClicked
