@@ -59,7 +59,7 @@ public class EmulatorPanel extends javax.swing.JPanel {
     
     public void updateText(String s) {
         itemDisplay.setText(s);
-        priceLabel.setText(String.format("%.2f", StarbucksEmulator.order.getCost()));
+        priceBtn.setText(String.format("%.2f", StarbucksEmulator.order.getCost()));
     }
     
 
@@ -77,7 +77,7 @@ public class EmulatorPanel extends javax.swing.JPanel {
         itemDisplay = new javax.swing.JTextArea();
         voidItemBtn = new javax.swing.JButton();
         totalLabel = new javax.swing.JLabel();
-        priceLabel = new javax.swing.JLabel();
+        priceBtn = new javax.swing.JButton();
 
         itemDisplay.setColumns(20);
         itemDisplay.setFont(new java.awt.Font("Cambria", 0, 14)); // NOI18N
@@ -97,10 +97,14 @@ public class EmulatorPanel extends javax.swing.JPanel {
         totalLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         totalLabel.setText("TOTAL");
 
-        priceLabel.setFont(new java.awt.Font("Cambria", 0, 14)); // NOI18N
-        priceLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        priceLabel.setText("[price]");
-        priceLabel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        priceBtn.setFont(new java.awt.Font("Cambria", 0, 14)); // NOI18N
+        priceBtn.setText("[price]");
+        priceBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        priceBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                priceBtnMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -110,12 +114,13 @@ public class EmulatorPanel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(voidItemBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
                             .addComponent(totalLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(priceLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(priceBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(labelTabs, javax.swing.GroupLayout.PREFERRED_SIZE, 1124, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -125,7 +130,6 @@ public class EmulatorPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(82, 82, 82)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelTabs, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -133,7 +137,8 @@ public class EmulatorPanel extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(totalLabel)
-                            .addComponent(priceLabel))))
+                            .addComponent(priceBtn)))
+                    .addComponent(labelTabs, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(86, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -142,15 +147,32 @@ public class EmulatorPanel extends javax.swing.JPanel {
         Item i = StarbucksEmulator.order.current();
         if (i != null && i instanceof Drink) {
             ((Drink)i).removeCustom();
+            updateText(StarbucksEmulator.order.toString());
         }
     }//GEN-LAST:event_voidItemBtnMouseClicked
+
+    private void priceBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_priceBtnMouseClicked
+        DataMover dm = StarbucksEmulator.dm;
+        Thread thread = new Thread() {
+            public void run() {
+                TextInfo ti = new TextInfo(dm);
+                ti.setVisible(true);
+                dm.guardDone();
+                ti.dispose();
+                StarbucksEmulator.order.name = dm.getString();
+                System.out.println(StarbucksEmulator.order);
+                StarbucksEmulator.order = new Order();
+            }
+        };
+        thread.start();
+    }//GEN-LAST:event_priceBtnMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea itemDisplay;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane labelTabs;
-    private javax.swing.JLabel priceLabel;
+    private javax.swing.JButton priceBtn;
     private javax.swing.JLabel totalLabel;
     private javax.swing.JButton voidItemBtn;
     // End of variables declaration//GEN-END:variables

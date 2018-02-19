@@ -2,9 +2,9 @@ package starbucksemulator;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.HashSet;
+import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.Set;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -15,7 +15,7 @@ public class Drink extends Item {
     private String milk = "2% MILK";
     private boolean isIced;
     private Espresso espresso;
-    private Set<String> custom = new HashSet<String>();
+    private List<String> custom = new ArrayList<String>();
     
     public Drink(String s, double d) {
         super(s, d);
@@ -50,10 +50,11 @@ public class Drink extends Item {
         custom.add(s);
     }
     
-    public void removeCustom() {
+    public String removeCustom() {
         if (custom.size() > 0) {
-            custom.remove(custom.size() - 1);
+            return custom.remove(custom.size() - 1);
         }
+        return "";
     }
     
     public void setSize(String s) {
@@ -85,19 +86,60 @@ public class Drink extends Item {
             s += String.format("%s [drink]\n", size);
         } else {
             s += String.format("%s %s\n", size, dName);
+            try {
+                ResultSet rs = StarbucksEmulator.stmt.executeQuery("SELECT * FROM DRINKPRICE WHERE SIZE='" + size + "'");
+                rs.next();
+                price = rs.getDouble("COST");
+            } catch (SQLException ex) {
+                Logger.getLogger(Drink.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         s += espresso;
         if (!milk.equalsIgnoreCase("2% milk")) {
-            s += "    " + milk + "\n";
+            if (!(milk.equalsIgnoreCase("nonfat milk") || milk.equalsIgnoreCase("whole milk"))) {
+                try {
+                    ResultSet rs = StarbucksEmulator.stmt.executeQuery("SELECT * FROM CUSTOMCOST WHERE CUSTOM='NONDAIRY'");
+                    rs.next();
+                    double extraCost = rs.getDouble("COST");
+                    price += extraCost;
+                    s += String.format("    %s\t%.2f\n", milk, extraCost);
+                } catch (SQLException ex) {
+                    Logger.getLogger(Drink.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            } else {
+                s += "    " + milk + "\n";
+            }
         }
         s += makeString(custom);
         return s;
     }
     
-    private String makeString(Set<String> custom) {
+    private String makeString(List<String> custom) {
         String s = "";
         for (String i : custom) {
-            s += String.format("    %s\n", i);
+            if (i.contains("syrup")) { //
+                try {
+                    ResultSet rs = StarbucksEmulator.stmt.executeQuery("SELECT * FROM CUSTOMCOST WHERE CUSTOM='SYRUP'");
+                    rs.next();
+                    double extraCost = rs.getDouble("COST");
+                    price += extraCost;
+                    s += String.format("    %s\t%.2f\n", i, extraCost);
+                } catch (SQLException ex) {
+                    Logger.getLogger(Drink.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            } else if (i.contains("sauce")) { //
+                try {
+                    ResultSet rs = StarbucksEmulator.stmt.executeQuery("SELECT * FROM CUSTOMCOST WHERE CUSTOM='SAUCE'");
+                    rs.next();
+                    double extraCost = rs.getDouble("COST");
+                    price += extraCost;
+                    s += String.format("    %s\t%.2f\n", i, extraCost);
+                } catch (SQLException ex) {
+                    Logger.getLogger(Drink.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            } else {
+                s += String.format("    %s\n", i);
+            }
         }
         return s;
     }

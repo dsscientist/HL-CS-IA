@@ -41,26 +41,41 @@ public class Espresso {
     public String toString() {
         String s = "";
         if (roast == BLONDE) {
-            s += "  Blonde\n";
+            s += "    Blonde\n";
         }
         if (isDecaf) {
-            s += "  Decaf\n";
+            s += "    Decaf\n";
+        }
+        ResultSet rs;
+        int shots = 0;
+        double extraCost = 0;
+        try {
+            rs = StarbucksEmulator.stmt.executeQuery(String.format("SELECT NUMSHOTS FROM RECIPEKEY WHERE SIZE='%s'",parent.getSize()));
+            rs.next();
+            shots = rs.getInt("NUMSHOTS");
+            rs = StarbucksEmulator.stmt.executeQuery("SELECT COST FROM CUSTOMCOST WHERE CUSTOM='PLUSSHOT'");
+            rs.next();
+            extraCost = rs.getDouble("COST");
+        } catch (SQLException ex) {
+            Logger.getLogger(Espresso.class.getName()).log(Level.SEVERE, null, ex);
         }
         if (shotNum <= SHOT_NAME.length) {
             if (shotNum != 0) {
-                try {
-                    ResultSet rs = StarbucksEmulator.stmt.executeQuery(String.format("SELECT NUMSHOTS FROM RECIPEKEY WHERE SIZE='%s'",parent.getSize()));
-                    rs.next();
-                    int shots = rs.getInt("NUMSHOTS");
-                    if (shots != shotNum) {
-                        s += String.format("  %s\n", SHOT_NAME[shotNum - 1]);
-                    }
-                } catch (SQLException ex) {
-                    Logger.getLogger(Espresso.class.getName()).log(Level.SEVERE, null, ex);
+                if (shots > shotNum) {
+                    s += String.format("    %s\n", SHOT_NAME[shotNum - 1]);
+                } else if (shotNum > shots) {
+                    parent.price += (shotNum - shots) * extraCost;
+                    s += String.format("    %s\t%.2f\n", SHOT_NAME[shotNum - 1],
+                            (shotNum - shots) * extraCost);
                 }
             }
         } else {
-            s += String.format("  %d Shots\n", shotNum);
+            if (shotNum > shots) {
+                parent.price += (shotNum - shots) * extraCost;
+                s += String.format("    %d Shots\t%.2f\n", shotNum, (shotNum - shots) * extraCost);
+            } else {
+                s += String.format("    %d Shots\n", shotNum);
+            }
         }
         if (isRistretto) {
             s += "  Ristretto";

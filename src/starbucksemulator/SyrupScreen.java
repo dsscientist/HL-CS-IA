@@ -229,7 +229,8 @@ public class SyrupScreen extends javax.swing.JPanel {
     
     private void mochaBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mochaBtnMouseClicked
         checkCurrentNull();
-        current.setMilk(mochaBtn.getText());
+        checkDuplicate("mocha");
+        current.addCustom("mocha sauce\t");
         updateText();
     }//GEN-LAST:event_mochaBtnMouseClicked
 
@@ -242,7 +243,7 @@ public class SyrupScreen extends javax.swing.JPanel {
                 nkp.setVisible(true);
                 dm.guardDone();
                 nkp.dispose();
-                current.addCustom("do some stuff here");
+                current.addCustom(String.format("%d pumps %s", dm.getInt(), current.removeCustom()));
                 updateText();
             }
         };
@@ -251,7 +252,8 @@ public class SyrupScreen extends javax.swing.JPanel {
 
     private void caramelBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_caramelBtnMouseClicked
         checkCurrentNull();
-        current.setMilk(caramelBtn.getText());
+        checkDuplicate("caramel");
+        current.addCustom("caramel syrup");
         updateText();
     }//GEN-LAST:event_caramelBtnMouseClicked
 
@@ -272,15 +274,24 @@ public class SyrupScreen extends javax.swing.JPanel {
     }//GEN-LAST:event_extraBtnMouseClicked
 
     private void peppermintBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_peppermintBtnMouseClicked
-        // TODO add your handling code here:
+        checkCurrentNull();
+        checkDuplicate("peppermint");
+        current.addCustom("peppermint syrup");
+        updateText();
     }//GEN-LAST:event_peppermintBtnMouseClicked
 
     private void hazelnutBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hazelnutBtnMouseClicked
-        // TODO add your handling code here:
+        checkCurrentNull();
+        checkDuplicate("hazelnut");
+        current.addCustom("hazelnut syrup\t");
+        updateText();
     }//GEN-LAST:event_hazelnutBtnMouseClicked
 
     private void vanillaBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vanillaBtnMouseClicked
-        // TODO add your handling code here:
+        checkCurrentNull();
+        checkDuplicate("vanilla");
+        current.addCustom("vanilla syrup\t");
+        updateText();
     }//GEN-LAST:event_vanillaBtnMouseClicked
 
 
