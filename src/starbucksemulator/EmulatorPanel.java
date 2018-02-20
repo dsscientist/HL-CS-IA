@@ -78,6 +78,12 @@ public class EmulatorPanel extends javax.swing.JPanel {
         voidItemBtn = new javax.swing.JButton();
         totalLabel = new javax.swing.JLabel();
         priceBtn = new javax.swing.JButton();
+        askMeBtn = new javax.swing.JButton();
+        nextDrinkBtn = new javax.swing.JButton();
+        addShotBtn = new javax.swing.JButton();
+        copyDrinkBtn = new javax.swing.JButton();
+
+        setPreferredSize(new java.awt.Dimension(1370, 748));
 
         itemDisplay.setColumns(20);
         itemDisplay.setFont(new java.awt.Font("Cambria", 0, 14)); // NOI18N
@@ -106,29 +112,84 @@ public class EmulatorPanel extends javax.swing.JPanel {
             }
         });
 
+        askMeBtn.setBackground(new java.awt.Color(0, 0, 0));
+        askMeBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        askMeBtn.setForeground(new java.awt.Color(255, 255, 255));
+        askMeBtn.setText("Ask Me");
+        askMeBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                askMeBtnMouseClicked(evt);
+            }
+        });
+
+        nextDrinkBtn.setBackground(new java.awt.Color(0, 0, 0));
+        nextDrinkBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        nextDrinkBtn.setForeground(new java.awt.Color(255, 255, 255));
+        nextDrinkBtn.setText("Next Drink");
+        nextDrinkBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                nextDrinkBtnMouseClicked(evt);
+            }
+        });
+
+        addShotBtn.setBackground(new java.awt.Color(0, 0, 0));
+        addShotBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        addShotBtn.setForeground(new java.awt.Color(255, 255, 255));
+        addShotBtn.setText("Add Shot");
+        addShotBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addShotBtnMouseClicked(evt);
+            }
+        });
+
+        copyDrinkBtn.setBackground(new java.awt.Color(0, 0, 0));
+        copyDrinkBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        copyDrinkBtn.setForeground(new java.awt.Color(255, 255, 255));
+        copyDrinkBtn.setText("Copy Drink");
+        copyDrinkBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                copyDrinkBtnMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(voidItemBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
-                            .addComponent(totalLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(priceBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(labelTabs, javax.swing.GroupLayout.PREFERRED_SIZE, 1124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(voidItemBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+                                    .addComponent(totalLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(priceBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(labelTabs, javax.swing.GroupLayout.PREFERRED_SIZE, 1124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(212, 212, 212)
+                                .addComponent(addShotBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(copyDrinkBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(61, 61, 61)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(212, 212, 212)
+                                .addComponent(nextDrinkBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(askMeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(82, 82, 82)
+                .addGap(41, 41, 41)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -139,7 +200,14 @@ public class EmulatorPanel extends javax.swing.JPanel {
                             .addComponent(totalLabel)
                             .addComponent(priceBtn)))
                     .addComponent(labelTabs, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(askMeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nextDrinkBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(copyDrinkBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(addShotBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -155,23 +223,64 @@ public class EmulatorPanel extends javax.swing.JPanel {
         DataMover dm = StarbucksEmulator.dm;
         Thread thread = new Thread() {
             public void run() {
-                TextInfo ti = new TextInfo(dm);
+                TextInfo ti = new TextInfo(dm, "Name");
                 ti.setVisible(true);
                 dm.guardDone();
                 ti.dispose();
                 StarbucksEmulator.order.name = dm.getString();
-                System.out.println(StarbucksEmulator.order);
+                StarbucksEmulator.order.output();
                 StarbucksEmulator.order = new Order();
+                updateText(StarbucksEmulator.order.toString());
             }
         };
         thread.start();
     }//GEN-LAST:event_priceBtnMouseClicked
 
+    private void askMeBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_askMeBtnMouseClicked
+        DataMover dm = StarbucksEmulator.dm;
+        Thread thread = new Thread() {
+            public void run() {
+                TextInfo ti = new TextInfo(dm, "Name");
+                ti.setVisible(true);
+                dm.guardDone();
+                ti.dispose();
+                ((Drink)StarbucksEmulator.order.current()).addCustom(dm.getString());
+                updateText(StarbucksEmulator.order.toString());
+            }
+        };
+        thread.start();
+    }//GEN-LAST:event_askMeBtnMouseClicked
+
+    private void nextDrinkBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nextDrinkBtnMouseClicked
+        StarbucksEmulator.order.addItem(new Drink());
+        updateText(StarbucksEmulator.order.toString());
+    }//GEN-LAST:event_nextDrinkBtnMouseClicked
+
+    private void addShotBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addShotBtnMouseClicked
+        if (StarbucksEmulator.order.current() == null) {
+            StarbucksEmulator.order.addItem(new Drink());
+        }
+        Drink current = (Drink)StarbucksEmulator.order.current();
+        current.getEspresso().setShots(current.getEspresso().getShotNum() + 1);
+        updateText(StarbucksEmulator.order.toString());
+    }//GEN-LAST:event_addShotBtnMouseClicked
+
+    private void copyDrinkBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_copyDrinkBtnMouseClicked
+        if (StarbucksEmulator.order.current() != null) {
+            StarbucksEmulator.order.addItem(((Drink)StarbucksEmulator.order.current()).copy());
+        }
+        updateText(StarbucksEmulator.order.toString());
+    }//GEN-LAST:event_copyDrinkBtnMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addShotBtn;
+    private javax.swing.JButton askMeBtn;
+    private javax.swing.JButton copyDrinkBtn;
     private javax.swing.JTextArea itemDisplay;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane labelTabs;
+    private javax.swing.JButton nextDrinkBtn;
     private javax.swing.JButton priceBtn;
     private javax.swing.JLabel totalLabel;
     private javax.swing.JButton voidItemBtn;

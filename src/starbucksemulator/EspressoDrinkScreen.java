@@ -14,12 +14,32 @@ import java.sql.Statement;
 public class EspressoDrinkScreen extends javax.swing.JPanel {
 
     private Statement stmt;
+    private javax.swing.JButton[] buttons = new javax.swing.JButton[7];
+    private Drink current;
     
     public EspressoDrinkScreen(Statement s) {
         initComponents();
         stmt = s;
+        addButtons();
+        roundButtons();
     }
 
+    private void addButtons() {
+        buttons[0] = cappuccinoBtn;
+        buttons[1] = flatWhiteBtn;
+        buttons[2] = hazelnutLatteBtn;
+        buttons[3] = latteBtn;
+        buttons[4] = mochaBtn;
+        buttons[5] = peppermintMochaBtn;
+        buttons[6] = vanillaLatteBtn;
+    }
+    
+    private void roundButtons() {
+        for (javax.swing.JButton b : buttons) {
+            b.setBorder(new RoundedBorder(10));
+        }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -29,19 +49,199 @@ public class EspressoDrinkScreen extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        flatWhiteBtn = new javax.swing.JButton();
+        mochaBtn = new javax.swing.JButton();
+        latteBtn = new javax.swing.JButton();
+        peppermintMochaBtn = new javax.swing.JButton();
+        cappuccinoBtn = new javax.swing.JButton();
+        vanillaLatteBtn = new javax.swing.JButton();
+        hazelnutLatteBtn = new javax.swing.JButton();
+
+        setPreferredSize(new java.awt.Dimension(1024, 600));
+
+        flatWhiteBtn.setBackground(new java.awt.Color(204, 204, 255));
+        flatWhiteBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        flatWhiteBtn.setText("Flat White");
+        flatWhiteBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                flatWhiteBtnMouseClicked(evt);
+            }
+        });
+
+        mochaBtn.setBackground(new java.awt.Color(204, 204, 255));
+        mochaBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        mochaBtn.setText("Mocha");
+        mochaBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mochaBtnMouseClicked(evt);
+            }
+        });
+
+        latteBtn.setBackground(new java.awt.Color(204, 204, 255));
+        latteBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        latteBtn.setText("Latte");
+        latteBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                latteBtnMouseClicked(evt);
+            }
+        });
+
+        peppermintMochaBtn.setBackground(new java.awt.Color(204, 204, 255));
+        peppermintMochaBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        peppermintMochaBtn.setText("Peppermint Mocha");
+        peppermintMochaBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                peppermintMochaBtnMouseClicked(evt);
+            }
+        });
+
+        cappuccinoBtn.setBackground(new java.awt.Color(204, 204, 255));
+        cappuccinoBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        cappuccinoBtn.setText("Cappuccino");
+        cappuccinoBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cappuccinoBtnMouseClicked(evt);
+            }
+        });
+
+        vanillaLatteBtn.setBackground(new java.awt.Color(204, 204, 255));
+        vanillaLatteBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        vanillaLatteBtn.setText("Vanilla Latte");
+        vanillaLatteBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                vanillaLatteBtnMouseClicked(evt);
+            }
+        });
+
+        hazelnutLatteBtn.setBackground(new java.awt.Color(204, 204, 255));
+        hazelnutLatteBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        hazelnutLatteBtn.setText("Hazelnut Latte");
+        hazelnutLatteBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                hazelnutLatteBtnMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1024, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(212, 212, 212)
+                                .addComponent(mochaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(latteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                        .addComponent(cappuccinoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(57, 57, 57)
+                        .addComponent(vanillaLatteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(57, 57, 57)
+                        .addComponent(hazelnutLatteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(212, 212, 212)
+                                .addComponent(peppermintMochaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(flatWhiteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(cappuccinoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(vanillaLatteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(latteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(mochaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(hazelnutLatteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(57, 57, 57)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(flatWhiteBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(peppermintMochaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(412, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void checkCurrentNull() {
+        if (StarbucksEmulator.order.current() == null) {
+            StarbucksEmulator.order.addItem(new Drink());
+        }
+        current = (Drink)StarbucksEmulator.order.current();
+    }
+    
+    private void updateText() {
+        ((EmulatorPanel)this.getParent().getParent()).updateText(StarbucksEmulator.order.toString());
+    }
+    
+    private void flatWhiteBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_flatWhiteBtnMouseClicked
+        checkCurrentNull();
+        current.setDrinkName("Flat White");
+        current.clearCustom();
+        updateText();
+    }//GEN-LAST:event_flatWhiteBtnMouseClicked
+
+    private void mochaBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mochaBtnMouseClicked
+        checkCurrentNull();
+        current.setDrinkName("Mocha");
+        current.clearCustom();
+        updateText();
+    }//GEN-LAST:event_mochaBtnMouseClicked
+
+    private void latteBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_latteBtnMouseClicked
+        checkCurrentNull();
+        current.setDrinkName("Latte");
+        current.clearCustom();
+        updateText();
+    }//GEN-LAST:event_latteBtnMouseClicked
+
+    private void peppermintMochaBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_peppermintMochaBtnMouseClicked
+        checkCurrentNull();
+        current.setDrinkName("Peppermint Mocha");
+        current.clearCustom();
+        updateText();
+    }//GEN-LAST:event_peppermintMochaBtnMouseClicked
+
+    private void cappuccinoBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cappuccinoBtnMouseClicked
+        checkCurrentNull();
+        current.setDrinkName("Cappuccino");
+        current.clearCustom();
+        updateText();
+    }//GEN-LAST:event_cappuccinoBtnMouseClicked
+
+    private void vanillaLatteBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vanillaLatteBtnMouseClicked
+        checkCurrentNull();
+        current.setDrinkName("Latte");
+        current.clearCustom();
+        current.addCustom("vanilla syrup\t");
+        updateText();
+    }//GEN-LAST:event_vanillaLatteBtnMouseClicked
+
+    private void hazelnutLatteBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hazelnutLatteBtnMouseClicked
+        checkCurrentNull();
+        current.setDrinkName("Latte");
+        current.clearCustom();
+        current.addCustom("hazelnut syrup");
+        updateText();
+    }//GEN-LAST:event_hazelnutLatteBtnMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cappuccinoBtn;
+    private javax.swing.JButton flatWhiteBtn;
+    private javax.swing.JButton hazelnutLatteBtn;
+    private javax.swing.JButton lactaidMilkBtn;
+    private javax.swing.JButton lactaidMilkBtn1;
+    private javax.swing.JButton latteBtn;
+    private javax.swing.JButton mochaBtn;
+    private javax.swing.JButton peppermintMochaBtn;
+    private javax.swing.JButton vanillaLatteBtn;
     // End of variables declaration//GEN-END:variables
 }

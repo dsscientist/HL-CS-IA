@@ -64,7 +64,7 @@ public class SyrupScreen extends javax.swing.JPanel {
 
         setPreferredSize(new java.awt.Dimension(1024, 600));
 
-        mochaBtn.setBackground(new java.awt.Color(204, 204, 204));
+        mochaBtn.setBackground(new java.awt.Color(204, 153, 255));
         mochaBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
         mochaBtn.setText("Mocha Sauce");
         mochaBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -283,7 +283,7 @@ public class SyrupScreen extends javax.swing.JPanel {
     private void hazelnutBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hazelnutBtnMouseClicked
         checkCurrentNull();
         checkDuplicate("hazelnut");
-        current.addCustom("hazelnut syrup\t");
+        current.addCustom("hazelnut syrup");
         updateText();
     }//GEN-LAST:event_hazelnutBtnMouseClicked
 

@@ -12,9 +12,17 @@ package starbucksemulator;
 public class TextInfo extends javax.swing.JFrame {
 
     private static DataMover dm;
+    private static String title;
     
-    public TextInfo(DataMover d) {
+    public TextInfo(DataMover d, String title) {
         initComponents();
+        this.setTitle(title);
+        this.title = title;
+        if (title.equals("Name")) {
+            nameLabel.setText("Enter Name Below");
+        } else {
+            nameLabel.setText("Enter Custom Below");
+        }
         dm = d;
         userTextEnter.setText("");
     }
@@ -126,7 +134,7 @@ public class TextInfo extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TextInfo(dm).setVisible(true);
+                new TextInfo(dm, title).setVisible(true);
             }
         });
     }

@@ -31,7 +31,7 @@ public class MainInterface extends javax.swing.JFrame {
         EmulatorPanel ep = new EmulatorPanel(stmt);
         this.add(ep);
         ep.setLocation(0, 0);
-        ep.setSize(1366, 768);
+        ep.setSize(1366, 748);
         ep.setVisible(true);
     }
 

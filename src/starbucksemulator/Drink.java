@@ -35,6 +35,17 @@ public class Drink extends Item {
         return size;
     }
     
+    public Drink copy() {
+        Drink temp = new Drink("", this.price);
+        temp.dName = this.dName;
+        temp.espresso = this.espresso.copy(temp);
+        temp.isIced = this.isIced;
+        temp.milk = this.milk;
+        temp.size = this.size;
+        temp.custom = new ArrayList<>(this.custom);
+        return temp;
+    }
+    
     public boolean checkDuplicate(String s) { //return value modelled after Collection class
         Iterator<String> itr = custom.iterator();
         while (itr.hasNext()) {
@@ -53,8 +64,17 @@ public class Drink extends Item {
     public String removeCustom() {
         if (custom.size() > 0) {
             return custom.remove(custom.size() - 1);
+        } else if (!milk.equalsIgnoreCase("2% milk")){
+            milk = "2% milk";
+            return "2% milk";
+        } else {
+            StarbucksEmulator.order.removeItem();
         }
         return "";
+    }
+    
+    public void clearCustom() {
+        custom.clear();
     }
     
     public void setSize(String s) {
@@ -74,6 +94,10 @@ public class Drink extends Item {
     
     public void setIced() {
         isIced = !isIced;
+    }
+    
+    public void setDrinkName(String s) {
+        dName = s;
     }
     
     @Override

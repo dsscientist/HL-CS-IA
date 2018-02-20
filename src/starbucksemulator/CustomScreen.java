@@ -340,12 +340,14 @@ public class CustomScreen extends javax.swing.JPanel {
 
     private void extraHotBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_extraHotBtnMouseClicked
         checkCurrentNull();
+        current.checkDuplicate("warm");
         current.addCustom("extra hot");
         updateText();
     }//GEN-LAST:event_extraHotBtnMouseClicked
 
     private void warmBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_warmBtnMouseClicked
         checkCurrentNull();
+        current.checkDuplicate("extra hot");
         current.addCustom("warm");
         updateText();
     }//GEN-LAST:event_warmBtnMouseClicked
@@ -353,12 +355,17 @@ public class CustomScreen extends javax.swing.JPanel {
     private void temperatureBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_temperatureBtnMouseClicked
         checkCurrentNull();
         DataMover dm = StarbucksEmulator.dm;
-        NumberKeyPopup nkp = new NumberKeyPopup("TEMPERATURE", StarbucksEmulator.stmt, dm);
-        nkp.setVisible(true);
-        dm.guardDone();
-        nkp.dispose();
-        current.addCustom(String.format("%d degrees", dm.getInt()));
-        updateText();
+        Thread thread = new Thread() {
+            public void run() {
+                NumberKeyPopup nkp = new NumberKeyPopup("TEMPERATURE", StarbucksEmulator.stmt, dm);
+                nkp.setVisible(true);
+                dm.guardDone();
+                nkp.dispose();
+                current.addCustom(String.format("%d degrees", dm.getInt()));
+                updateText();
+            }
+        };
+        thread.start();
     }//GEN-LAST:event_temperatureBtnMouseClicked
 
 

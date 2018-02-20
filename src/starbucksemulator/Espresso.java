@@ -16,6 +16,14 @@ public class Espresso {
     
     public Espresso(Drink d) {
         parent = d;
+        ResultSet rs;
+        try {
+            rs = StarbucksEmulator.stmt.executeQuery(String.format("SELECT NUMSHOTS FROM RECIPEKEY WHERE SIZE='%s'",parent.getSize()));
+            rs.next();
+            shotNum = rs.getInt("NUMSHOTS");
+        } catch (SQLException ex) {
+            Logger.getLogger(Espresso.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     public void setShots(int i) {
@@ -28,6 +36,15 @@ public class Espresso {
     
     public void setRoast(Roast r) {
         roast = r;
+    }
+    
+    public Espresso copy(Drink d) {
+        Espresso temp = new Espresso(d);
+        temp.shotNum = this.shotNum;
+        temp.isDecaf = this.isDecaf;
+        temp.isRistretto = this.isRistretto;
+        temp.roast = this.roast;
+        return temp;
     }
     
     public void setRistretto() {
@@ -65,20 +82,20 @@ public class Espresso {
                     s += String.format("    %s\n", SHOT_NAME[shotNum - 1]);
                 } else if (shotNum > shots) {
                     parent.price += (shotNum - shots) * extraCost;
-                    s += String.format("    %s\t%.2f\n", SHOT_NAME[shotNum - 1],
+                    s += String.format("    %s\t\t%.2f\n", SHOT_NAME[shotNum - 1],
                             (shotNum - shots) * extraCost);
                 }
             }
         } else {
             if (shotNum > shots) {
                 parent.price += (shotNum - shots) * extraCost;
-                s += String.format("    %d Shots\t%.2f\n", shotNum, (shotNum - shots) * extraCost);
+                s += String.format("    %d Shots\t\t%.2f\n", shotNum, (shotNum - shots) * extraCost);
             } else {
                 s += String.format("    %d Shots\n", shotNum);
             }
         }
         if (isRistretto) {
-            s += "  Ristretto";
+            s += "    Ristretto\n";
         }
         return s;
     }

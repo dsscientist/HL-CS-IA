@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Order {
     private List<Item> items = new ArrayList<Item>();
-    String name = "[NAME]";
+    String name = "[*NAME*]";
     
     public Order() {
     }
@@ -29,8 +29,25 @@ public class Order {
         }
         return null; //handle exception elsewhere
     }
+       
+    public void removeItem() {
+        if (items.size() > 0) {
+            items.remove(items.size() - 1);
+        }
+    }
     
-    //voidItem method
+    public void output() { //this is making the "sticker"
+        int size = items.size();
+        int count = 1;
+        for (Item i : items) {
+            System.out.println("+----------------------------+");
+            System.out.printf(" Item: %d of %d\n", count, size);
+            count++;
+            System.out.println(" *" + name + "*");
+            System.out.println(" " + i);
+            System.out.println("+----------------------------+");
+        }
+    }
     
     @Override
     public String toString() {
