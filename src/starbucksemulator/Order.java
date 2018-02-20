@@ -7,6 +7,8 @@ import java.util.List;
 public class Order {
     private List<Item> items = new ArrayList<Item>();
     String name = "[*NAME*]";
+    private int size;
+    private static Order tempStorage;
     
     public Order() {
     }
@@ -21,6 +23,11 @@ public class Order {
     
     public void addItem(Item i) {
         items.add(i);
+        size++;
+    }
+    
+    public int getSize() {
+        return size;
     }
     
     public Item current() {
@@ -34,6 +41,16 @@ public class Order {
         if (items.size() > 0) {
             items.remove(items.size() - 1);
         }
+    }
+    
+    public void saveOrder() {
+        tempStorage = this;
+    }
+    
+    public Order recallOrder() {
+        Order temp = tempStorage;
+        tempStorage = null;
+        return temp;
     }
     
     public void output() { //this is making the "sticker"

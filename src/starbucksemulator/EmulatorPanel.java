@@ -82,6 +82,7 @@ public class EmulatorPanel extends javax.swing.JPanel {
         nextDrinkBtn = new javax.swing.JButton();
         addShotBtn = new javax.swing.JButton();
         copyDrinkBtn = new javax.swing.JButton();
+        saveOrderBtn = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(1370, 748));
 
@@ -152,6 +153,16 @@ public class EmulatorPanel extends javax.swing.JPanel {
             }
         });
 
+        saveOrderBtn.setBackground(new java.awt.Color(0, 0, 0));
+        saveOrderBtn.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        saveOrderBtn.setForeground(new java.awt.Color(255, 255, 255));
+        saveOrderBtn.setText("Save Order");
+        saveOrderBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                saveOrderBtnMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -173,6 +184,8 @@ public class EmulatorPanel extends javax.swing.JPanel {
                         .addComponent(labelTabs, javax.swing.GroupLayout.PREFERRED_SIZE, 1124, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(saveOrderBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(60, 60, 60)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(212, 212, 212)
@@ -200,13 +213,15 @@ public class EmulatorPanel extends javax.swing.JPanel {
                             .addComponent(totalLabel)
                             .addComponent(priceBtn)))
                     .addComponent(labelTabs, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(askMeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nextDrinkBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(copyDrinkBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(addShotBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(addShotBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(saveOrderBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(askMeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(nextDrinkBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -240,7 +255,7 @@ public class EmulatorPanel extends javax.swing.JPanel {
         DataMover dm = StarbucksEmulator.dm;
         Thread thread = new Thread() {
             public void run() {
-                TextInfo ti = new TextInfo(dm, "Name");
+                TextInfo ti = new TextInfo(dm, "Custom");
                 ti.setVisible(true);
                 dm.guardDone();
                 ti.dispose();
@@ -272,6 +287,29 @@ public class EmulatorPanel extends javax.swing.JPanel {
         updateText(StarbucksEmulator.order.toString());
     }//GEN-LAST:event_copyDrinkBtnMouseClicked
 
+    private void saveOrderBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveOrderBtnMouseClicked
+        if (saveOrderBtn.getText().equals("Save Order")) {
+            if (StarbucksEmulator.order.getSize() == 0) { //waste of save order
+                return;
+            }
+            StarbucksEmulator.order.saveOrder();
+            StarbucksEmulator.order = new Order();
+            saveOrderBtn.setText("Recall Order");
+            updateText(StarbucksEmulator.order.toString());
+        } else { //then the text must be "Recall Order"
+            if (StarbucksEmulator.order.getSize() == 0) { //current order is blank, okay to dereference
+                StarbucksEmulator.order = StarbucksEmulator.order.recallOrder();
+                saveOrderBtn.setText("Save Order");
+                updateText(StarbucksEmulator.order.toString());
+            } else { //current order in progress
+                Order temp = StarbucksEmulator.order;
+                StarbucksEmulator.order = StarbucksEmulator.order.recallOrder();
+                temp.saveOrder();
+                updateText(StarbucksEmulator.order.toString());
+            }
+        }
+    }//GEN-LAST:event_saveOrderBtnMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addShotBtn;
@@ -282,6 +320,7 @@ public class EmulatorPanel extends javax.swing.JPanel {
     private javax.swing.JTabbedPane labelTabs;
     private javax.swing.JButton nextDrinkBtn;
     private javax.swing.JButton priceBtn;
+    private javax.swing.JButton saveOrderBtn;
     private javax.swing.JLabel totalLabel;
     private javax.swing.JButton voidItemBtn;
     // End of variables declaration//GEN-END:variables
