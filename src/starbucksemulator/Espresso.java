@@ -55,6 +55,14 @@ public class Espresso {
         return shotNum;
     }
     
+    public boolean getRistretto() {
+        return isRistretto;
+    }
+    
+    public boolean getDecaf() {
+        return isDecaf;
+    }
+    
     public String toString() {
         String s = "";
         if (roast == BLONDE) {
