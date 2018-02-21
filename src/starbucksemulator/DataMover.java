@@ -35,14 +35,10 @@ public class DataMover { //allows me to stop thread until data is received (like
         return item;
     }
     
-    public synchronized void guardDone() {
+    public synchronized void guardDone() throws InterruptedException {
         done = false;
         while (!done) {
-            try {
-                wait();
-            } catch (InterruptedException e) {
-                
-            }
+            wait();
         }
     }
     
